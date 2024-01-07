@@ -1,5 +1,6 @@
 <!-- 아래 차시 학습 시 활용하세요 :)
-52. Javascript DOM 함수 이해 -->
+54. HTML form 태그와 프론트엔드 및 백엔드 동작 이해
+55. HTML form 태그와 Javascript 연동 예제 코드 이해 -->
 
 <!DOCTYPE html>
 <html>
@@ -25,6 +26,12 @@
 
 <body>
     <div class="box1">ease</div>
+
+    <form>
+        <input type="password" name="data" id="passwordText">
+        <input type="submit" value="제출" id="signin">
+    </form>
+
     <script type="text/javascript">
         function makeRed(event) {
             box.style.background = "red";
@@ -35,6 +42,21 @@
         const box = document.querySelector(".box1");
         box.addEventListener("mousemove", makeRed);
         box.addEventListener("mouseout", makeBlue);
+
+        function checkPassword(event) {
+            const passwordData = document.querySelector("#passwordText");
+            let passwrodText = passwordData.value;
+            console.log(passwrodText);
+            if (passwrodText == "korea123") {
+                window.open("https://www.fun-coding.org", "_self");
+            } else {
+                alert("암호가 다르다");
+            }
+        }
+
+        const signinButton = document.querySelector("#signin");
+        signinButton.addEventListener("click", checkPassword);
+
     </script>
 </body>
 
