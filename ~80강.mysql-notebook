@@ -1,0 +1,4100 @@
+{
+    "type": "MySQLNotebook",
+    "version": "1.0",
+    "caption": "DB Notebook",
+    "content": "\\about\nDESC\ncreate DATABASE jackdb\ndrop database jackdb\ncreate database dave;\n\nshow DATABASES;\nselect * from customer_db;\nuse customer_db;\n\nDESC\nshow databases;\nuse dave;\nshow dave;\nshow TABLES;\ncreate table dave_table(\n    id int unsigned not null AUTO_INCREMENT\n    );\n)\nshow tables;\ndrop dave_table\ndrop table dave_table;\nshow tables;\nshow DATABASES;\nuse sakila;\nshow tables;\nselect * from actor;\nuse dave;\n\nshow tables;\ncreate table dave_table (\n    id int unsigned not null auto_increment,\n    name varchar(50),\n    primary key(id)\n);\nselect * from dave_table;\nuse customer_db;\nshow tabels;\nshow tables;\ncreate table mytable (\n    no integer not null AUTO_INCREMENT,\n    name char(20) not null,\n    age tinyint,\n    phone varchar(20),\n    email varchar(30) not null,\n    address varchar(50),\n    PRIMARY KEY(no)\n)\nshow tables;\ndesc mytable;\ndrop table mytable;\nshow database;\nshow tables;\nshow databases;\ncreate table mytable(\n    id int unsigned not null AUTO_INCREMENT,\n    name varchar(50) not null,\n    modelnumber varchar(15) not null,\n    series varchar(30) not null,\n    PRIMARY KEY(id)\n);\ninsert into mytable values(1, 'i7', '12700', 'Alder');\nselect * from mytable;\ninsert into mytable (name, modelnumber, series) values(\n    'ryzen7', '5900', 'Vermeer'\n);\nselect name, modelnumber from mytable;\nselect name as cpuname, modelnumber as cpunumber from mytable;\nselect * from mytable where modelnumber = '12700';\nselect * from mytable where name = 'i7';\nselect * from mytable where series = 'Alder';\nselect * from mytable where series = 'Alder' and modelnumber = '12700';\nselect * from mytable where series like 'A%';\nupdate mytable set name='ryzen9' where id = 4;\nupdate mytable set name='i5', modelnumber = '12600'\nwhere id = 2;\nselect * from mytable;\ndelete from mytable where id=2;\nselect * from mytable;\ndelete from mytable;\nshow tables;\ndrop table mytable;\nshow tables;\n",
+    "options": {
+        "tabSize": 4,
+        "insertSpaces": true,
+        "indentSize": 4,
+        "defaultEOL": "CRLF",
+        "trimAutoWhitespace": true
+    },
+    "viewState": {
+        "cursorState": [
+            {
+                "inSelectionMode": false,
+                "selectionStart": {
+                    "lineNumber": 84,
+                    "column": 1
+                },
+                "position": {
+                    "lineNumber": 84,
+                    "column": 1
+                }
+            }
+        ],
+        "viewState": {
+            "scrollLeft": 0,
+            "firstPosition": {
+                "lineNumber": 1,
+                "column": 1
+            },
+            "firstPositionDeltaTop": 0
+        },
+        "contributionsState": {
+            "editor.contrib.folding": {},
+            "editor.contrib.wordHighlighter": false
+        }
+    },
+    "contexts": [
+        {
+            "state": {
+                "start": 1,
+                "end": 1,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "content": "Welcome to the MySQL Shell - DB Notebook.\n\nPress Ctrl+Enter to execute the code block.\n\nExecute \\sql to switch to SQL, \\js to JavaScript and \\ts to TypeScript mode.\nExecute \\help or \\? for help;",
+                            "language": "ansi"
+                        }
+                    ]
+                },
+                "currentHeight": 122,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 6
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 2,
+                "end": 2,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 0,
+                            "index": 0,
+                            "content": "MySQL Error (1064): ClassicSession.run_sql: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1",
+                            "language": "ansi"
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": ""
+                    }
+                },
+                "currentHeight": 46,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 4
+                        },
+                        "contentStart": 0,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 3,
+                "end": 3,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "924afb95-5e88-4da1-81de-2683bf9767e8",
+                            "content": "OK, 1 row affected in 4.994ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 22
+                        },
+                        "contentStart": 0,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 4,
+                "end": 4,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "0c454925-7e18-4b91-915e-a357d29fc852",
+                            "content": "OK, 0 records retrieved in 22.001ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 20
+                        },
+                        "contentStart": 1,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 5,
+                "end": 6,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 0,
+                            "index": 0,
+                            "content": "MySQL Error (1007): ClassicSession.run_sql: Can't create database 'dave'; database exists",
+                            "language": "ansi"
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": ""
+                    }
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 21
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 21,
+                            "length": 1
+                        },
+                        "contentStart": 20,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 7,
+                "end": 7,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "3c0d3aae-3cd8-4a89-bd29-d49e9db0468f"
+                    ]
+                },
+                "currentHeight": 259.75,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 15
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "916a64c6-18e8-4ce4-8662-a501e3e3e81c",
+                    "resultId": "3c0d3aae-3cd8-4a89-bd29-d49e9db0468f",
+                    "rows": [
+                        {
+                            "0": "customer_db"
+                        },
+                        {
+                            "0": "dave"
+                        },
+                        {
+                            "0": "dbname"
+                        },
+                        {
+                            "0": "information_schema"
+                        },
+                        {
+                            "0": "mysql"
+                        },
+                        {
+                            "0": "performance_schema"
+                        },
+                        {
+                            "0": "sakila"
+                        },
+                        {
+                            "0": "sys"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Database",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 8 records retrieved in 2ms"
+                    },
+                    "totalRowCount": 8,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "show DATABASES"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 8,
+                "end": 8,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 0,
+                            "index": 0,
+                            "content": "MySQL Error (1046): ClassicSession.run_sql: No database selected",
+                            "language": "ansi"
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": ""
+                    }
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 26
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 26,
+                            "length": 0
+                        },
+                        "contentStart": 25,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 9,
+                "end": 10,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "37793cbb-5358-41b6-aa74-7622eeb15431",
+                            "content": "OK, 0 records retrieved in 1.003ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 16
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 16,
+                            "length": 1
+                        },
+                        "contentStart": 15,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 11,
+                "end": 11,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 0,
+                            "index": 0,
+                            "content": "MySQL Error (1064): ClassicSession.run_sql: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1",
+                            "language": "ansi"
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": ""
+                    }
+                },
+                "currentHeight": 65,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 4
+                        },
+                        "contentStart": 0,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 12,
+                "end": 12,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "fef176f2-c450-433a-ab92-676f24b6fe89"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 15
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "916a64c6-18e8-4ce4-8662-a501e3e3e81c",
+                    "resultId": "fef176f2-c450-433a-ab92-676f24b6fe89",
+                    "rows": [
+                        {
+                            "0": "customer_db"
+                        },
+                        {
+                            "0": "dave"
+                        },
+                        {
+                            "0": "dbname"
+                        },
+                        {
+                            "0": "information_schema"
+                        },
+                        {
+                            "0": "mysql"
+                        },
+                        {
+                            "0": "performance_schema"
+                        },
+                        {
+                            "0": "sakila"
+                        },
+                        {
+                            "0": "sys"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Database",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 8 records retrieved in 2.042ms"
+                    },
+                    "totalRowCount": 8,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "show databases"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 13,
+                "end": 13,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "400bbf9a-4e72-4e64-c220-9e61bc7ae0dd",
+                            "content": "OK, 0 records retrieved in 1.001ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 9
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 14,
+                "end": 14,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 0,
+                            "index": 0,
+                            "content": "MySQL Error (1064): ClassicSession.run_sql: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'dave' at line 1",
+                            "language": "ansi"
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": ""
+                    }
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 10
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 15,
+                "end": 15,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "69023c5b-f25e-49e8-c6ac-044ccb7507eb",
+                            "content": "OK, 0 records retrieved in 2.995ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 12
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 16,
+                "end": 19,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 0,
+                            "index": 0,
+                            "content": "MySQL Error (1050): ClassicSession.run_sql: Table 'dave_table' already exists",
+                            "language": "ansi"
+                        },
+                        {
+                            "type": 0,
+                            "index": 1,
+                            "content": "MySQL Error (1064): ClassicSession.run_sql: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1",
+                            "language": "ansi"
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": ""
+                    }
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 75
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 75,
+                            "length": 2
+                        },
+                        "contentStart": 76,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 20,
+                "end": 20,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "8206aaa1-ab30-4bee-83b7-9d90372b51f1"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 12
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "916a64c6-18e8-4ce4-8662-a501e3e3e81c",
+                    "resultId": "8206aaa1-ab30-4bee-83b7-9d90372b51f1",
+                    "rows": [
+                        {
+                            "0": "dave_table"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Tables_in_dave",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 4.002ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "show tables"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 21,
+                "end": 21,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 0,
+                            "index": 0,
+                            "content": "MySQL Error (1064): ClassicSession.run_sql: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'dave_table' at line 1",
+                            "language": "ansi"
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": ""
+                    }
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 15
+                        },
+                        "contentStart": 1,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 22,
+                "end": 22,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "60f989dd-1882-4ea1-eeb4-4bc0029d6a80",
+                            "content": "OK, 0 records retrieved in 28.996ms"
+                        },
+                        {
+                            "type": 0,
+                            "index": 1,
+                            "content": "MySQL Error (1065): ClassicSession.run_sql: Query was empty",
+                            "language": "ansi"
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": ""
+                    }
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 22
+                        },
+                        "contentStart": 1,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 22,
+                            "length": 0
+                        },
+                        "contentStart": 22,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 23,
+                "end": 23,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "e63fc0f3-ceb1-4a2f-b7b2-70aa615e5d67",
+                            "content": "OK, 0 records retrieved in 3.004ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 12
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 24,
+                "end": 24,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "75393a16-5861-4413-8f17-74bb9b259adc"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 15
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "916a64c6-18e8-4ce4-8662-a501e3e3e81c",
+                    "resultId": "75393a16-5861-4413-8f17-74bb9b259adc",
+                    "rows": [
+                        {
+                            "0": "customer_db"
+                        },
+                        {
+                            "0": "dave"
+                        },
+                        {
+                            "0": "dbname"
+                        },
+                        {
+                            "0": "information_schema"
+                        },
+                        {
+                            "0": "mysql"
+                        },
+                        {
+                            "0": "performance_schema"
+                        },
+                        {
+                            "0": "sakila"
+                        },
+                        {
+                            "0": "sys"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Database",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 8 records retrieved in 3.006ms"
+                    },
+                    "totalRowCount": 8,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "show DATABASES"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 25,
+                "end": 25,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "8d8b1836-4d3b-42c8-8297-192326ed1849",
+                            "content": "OK, 0 records retrieved in 1.001ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 11
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 26,
+                "end": 26,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "8286cdf4-bca6-444f-d2cc-dc25e0f255f6"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 12
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "916a64c6-18e8-4ce4-8662-a501e3e3e81c",
+                    "resultId": "8286cdf4-bca6-444f-d2cc-dc25e0f255f6",
+                    "rows": [
+                        {
+                            "0": "actor"
+                        },
+                        {
+                            "0": "actor_info"
+                        },
+                        {
+                            "0": "address"
+                        },
+                        {
+                            "0": "category"
+                        },
+                        {
+                            "0": "city"
+                        },
+                        {
+                            "0": "country"
+                        },
+                        {
+                            "0": "customer"
+                        },
+                        {
+                            "0": "customer_list"
+                        },
+                        {
+                            "0": "film"
+                        },
+                        {
+                            "0": "film_actor"
+                        },
+                        {
+                            "0": "film_category"
+                        },
+                        {
+                            "0": "film_list"
+                        },
+                        {
+                            "0": "film_text"
+                        },
+                        {
+                            "0": "inventory"
+                        },
+                        {
+                            "0": "language"
+                        },
+                        {
+                            "0": "nicer_but_slower_film_list"
+                        },
+                        {
+                            "0": "payment"
+                        },
+                        {
+                            "0": "rental"
+                        },
+                        {
+                            "0": "sales_by_film_category"
+                        },
+                        {
+                            "0": "sales_by_store"
+                        },
+                        {
+                            "0": "staff"
+                        },
+                        {
+                            "0": "staff_list"
+                        },
+                        {
+                            "0": "store"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Tables_in_sakila",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 23 records retrieved in 3.999ms"
+                    },
+                    "totalRowCount": 23,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "show tables"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 27,
+                "end": 27,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "19bcdee6-1339-4abe-94a1-88b2774126a3"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 20
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "916a64c6-18e8-4ce4-8662-a501e3e3e81c",
+                    "resultId": "19bcdee6-1339-4abe-94a1-88b2774126a3",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "PENELOPE",
+                            "2": "GUINESS",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 2,
+                            "1": "NICK",
+                            "2": "WAHLBERG",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 3,
+                            "1": "ED",
+                            "2": "CHASE",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 4,
+                            "1": "JENNIFER",
+                            "2": "DAVIS",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 5,
+                            "1": "JOHNNY",
+                            "2": "LOLLOBRIGIDA",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 6,
+                            "1": "BETTE",
+                            "2": "NICHOLSON",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 7,
+                            "1": "GRACE",
+                            "2": "MOSTEL",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 8,
+                            "1": "MATTHEW",
+                            "2": "JOHANSSON",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 9,
+                            "1": "JOE",
+                            "2": "SWANK",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 10,
+                            "1": "CHRISTIAN",
+                            "2": "GABLE",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 11,
+                            "1": "ZERO",
+                            "2": "CAGE",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 12,
+                            "1": "KARL",
+                            "2": "BERRY",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 13,
+                            "1": "UMA",
+                            "2": "WOOD",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 14,
+                            "1": "VIVIEN",
+                            "2": "BERGEN",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 15,
+                            "1": "CUBA",
+                            "2": "OLIVIER",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 16,
+                            "1": "FRED",
+                            "2": "COSTNER",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 17,
+                            "1": "HELEN",
+                            "2": "VOIGHT",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 18,
+                            "1": "DAN",
+                            "2": "TORN",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 19,
+                            "1": "BOB",
+                            "2": "FAWCETT",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 20,
+                            "1": "LUCILLE",
+                            "2": "TRACY",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 21,
+                            "1": "KIRSTEN",
+                            "2": "PALTROW",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 22,
+                            "1": "ELVIS",
+                            "2": "MARX",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 23,
+                            "1": "SANDRA",
+                            "2": "KILMER",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 24,
+                            "1": "CAMERON",
+                            "2": "STREEP",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 25,
+                            "1": "KEVIN",
+                            "2": "BLOOM",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 26,
+                            "1": "RIP",
+                            "2": "CRAWFORD",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 27,
+                            "1": "JULIA",
+                            "2": "MCQUEEN",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 28,
+                            "1": "WOODY",
+                            "2": "HOFFMAN",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 29,
+                            "1": "ALEC",
+                            "2": "WAYNE",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 30,
+                            "1": "SANDRA",
+                            "2": "PECK",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 31,
+                            "1": "SISSY",
+                            "2": "SOBIESKI",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 32,
+                            "1": "TIM",
+                            "2": "HACKMAN",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 33,
+                            "1": "MILLA",
+                            "2": "PECK",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 34,
+                            "1": "AUDREY",
+                            "2": "OLIVIER",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 35,
+                            "1": "JUDY",
+                            "2": "DEAN",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 36,
+                            "1": "BURT",
+                            "2": "DUKAKIS",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 37,
+                            "1": "VAL",
+                            "2": "BOLGER",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 38,
+                            "1": "TOM",
+                            "2": "MCKELLEN",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 39,
+                            "1": "GOLDIE",
+                            "2": "BRODY",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 40,
+                            "1": "JOHNNY",
+                            "2": "CAGE",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 41,
+                            "1": "JODIE",
+                            "2": "DEGENERES",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 42,
+                            "1": "TOM",
+                            "2": "MIRANDA",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 43,
+                            "1": "KIRK",
+                            "2": "JOVOVICH",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 44,
+                            "1": "NICK",
+                            "2": "STALLONE",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 45,
+                            "1": "REESE",
+                            "2": "KILMER",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 46,
+                            "1": "PARKER",
+                            "2": "GOLDBERG",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 47,
+                            "1": "JULIA",
+                            "2": "BARRYMORE",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 48,
+                            "1": "FRANCES",
+                            "2": "DAY-LEWIS",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 49,
+                            "1": "ANNE",
+                            "2": "CRONYN",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 50,
+                            "1": "NATALIE",
+                            "2": "HOPKINS",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 51,
+                            "1": "GARY",
+                            "2": "PHOENIX",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 52,
+                            "1": "CARMEN",
+                            "2": "HUNT",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 53,
+                            "1": "MENA",
+                            "2": "TEMPLE",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 54,
+                            "1": "PENELOPE",
+                            "2": "PINKETT",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 55,
+                            "1": "FAY",
+                            "2": "KILMER",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 56,
+                            "1": "DAN",
+                            "2": "HARRIS",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 57,
+                            "1": "JUDE",
+                            "2": "CRUISE",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 58,
+                            "1": "CHRISTIAN",
+                            "2": "AKROYD",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 59,
+                            "1": "DUSTIN",
+                            "2": "TAUTOU",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 60,
+                            "1": "HENRY",
+                            "2": "BERRY",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 61,
+                            "1": "CHRISTIAN",
+                            "2": "NEESON",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 62,
+                            "1": "JAYNE",
+                            "2": "NEESON",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 63,
+                            "1": "CAMERON",
+                            "2": "WRAY",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 64,
+                            "1": "RAY",
+                            "2": "JOHANSSON",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 65,
+                            "1": "ANGELA",
+                            "2": "HUDSON",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 66,
+                            "1": "MARY",
+                            "2": "TANDY",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 67,
+                            "1": "JESSICA",
+                            "2": "BAILEY",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 68,
+                            "1": "RIP",
+                            "2": "WINSLET",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 69,
+                            "1": "KENNETH",
+                            "2": "PALTROW",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 70,
+                            "1": "MICHELLE",
+                            "2": "MCCONAUGHEY",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 71,
+                            "1": "ADAM",
+                            "2": "GRANT",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 72,
+                            "1": "SEAN",
+                            "2": "WILLIAMS",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 73,
+                            "1": "GARY",
+                            "2": "PENN",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 74,
+                            "1": "MILLA",
+                            "2": "KEITEL",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 75,
+                            "1": "BURT",
+                            "2": "POSEY",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 76,
+                            "1": "ANGELINA",
+                            "2": "ASTAIRE",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 77,
+                            "1": "CARY",
+                            "2": "MCCONAUGHEY",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 78,
+                            "1": "GROUCHO",
+                            "2": "SINATRA",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 79,
+                            "1": "MAE",
+                            "2": "HOFFMAN",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 80,
+                            "1": "RALPH",
+                            "2": "CRUZ",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 81,
+                            "1": "SCARLETT",
+                            "2": "DAMON",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 82,
+                            "1": "WOODY",
+                            "2": "JOLIE",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 83,
+                            "1": "BEN",
+                            "2": "WILLIS",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 84,
+                            "1": "JAMES",
+                            "2": "PITT",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 85,
+                            "1": "MINNIE",
+                            "2": "ZELLWEGER",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 86,
+                            "1": "GREG",
+                            "2": "CHAPLIN",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 87,
+                            "1": "SPENCER",
+                            "2": "PECK",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 88,
+                            "1": "KENNETH",
+                            "2": "PESCI",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 89,
+                            "1": "CHARLIZE",
+                            "2": "DENCH",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 90,
+                            "1": "SEAN",
+                            "2": "GUINESS",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 91,
+                            "1": "CHRISTOPHER",
+                            "2": "BERRY",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 92,
+                            "1": "KIRSTEN",
+                            "2": "AKROYD",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 93,
+                            "1": "ELLEN",
+                            "2": "PRESLEY",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 94,
+                            "1": "KENNETH",
+                            "2": "TORN",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 95,
+                            "1": "DARYL",
+                            "2": "WAHLBERG",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 96,
+                            "1": "GENE",
+                            "2": "WILLIS",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 97,
+                            "1": "MEG",
+                            "2": "HAWKE",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 98,
+                            "1": "CHRIS",
+                            "2": "BRIDGES",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 99,
+                            "1": "JIM",
+                            "2": "MOSTEL",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 100,
+                            "1": "SPENCER",
+                            "2": "DEPP",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 101,
+                            "1": "SUSAN",
+                            "2": "DAVIS",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 102,
+                            "1": "WALTER",
+                            "2": "TORN",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 103,
+                            "1": "MATTHEW",
+                            "2": "LEIGH",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 104,
+                            "1": "PENELOPE",
+                            "2": "CRONYN",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 105,
+                            "1": "SIDNEY",
+                            "2": "CROWE",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 106,
+                            "1": "GROUCHO",
+                            "2": "DUNST",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 107,
+                            "1": "GINA",
+                            "2": "DEGENERES",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 108,
+                            "1": "WARREN",
+                            "2": "NOLTE",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 109,
+                            "1": "SYLVESTER",
+                            "2": "DERN",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 110,
+                            "1": "SUSAN",
+                            "2": "DAVIS",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 111,
+                            "1": "CAMERON",
+                            "2": "ZELLWEGER",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 112,
+                            "1": "RUSSELL",
+                            "2": "BACALL",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 113,
+                            "1": "MORGAN",
+                            "2": "HOPKINS",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 114,
+                            "1": "MORGAN",
+                            "2": "MCDORMAND",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 115,
+                            "1": "HARRISON",
+                            "2": "BALE",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 116,
+                            "1": "DAN",
+                            "2": "STREEP",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 117,
+                            "1": "RENEE",
+                            "2": "TRACY",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 118,
+                            "1": "CUBA",
+                            "2": "ALLEN",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 119,
+                            "1": "WARREN",
+                            "2": "JACKMAN",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 120,
+                            "1": "PENELOPE",
+                            "2": "MONROE",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 121,
+                            "1": "LIZA",
+                            "2": "BERGMAN",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 122,
+                            "1": "SALMA",
+                            "2": "NOLTE",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 123,
+                            "1": "JULIANNE",
+                            "2": "DENCH",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 124,
+                            "1": "SCARLETT",
+                            "2": "BENING",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 125,
+                            "1": "ALBERT",
+                            "2": "NOLTE",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 126,
+                            "1": "FRANCES",
+                            "2": "TOMEI",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 127,
+                            "1": "KEVIN",
+                            "2": "GARLAND",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 128,
+                            "1": "CATE",
+                            "2": "MCQUEEN",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 129,
+                            "1": "DARYL",
+                            "2": "CRAWFORD",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 130,
+                            "1": "GRETA",
+                            "2": "KEITEL",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 131,
+                            "1": "JANE",
+                            "2": "JACKMAN",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 132,
+                            "1": "ADAM",
+                            "2": "HOPPER",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 133,
+                            "1": "RICHARD",
+                            "2": "PENN",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 134,
+                            "1": "GENE",
+                            "2": "HOPKINS",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 135,
+                            "1": "RITA",
+                            "2": "REYNOLDS",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 136,
+                            "1": "ED",
+                            "2": "MANSFIELD",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 137,
+                            "1": "MORGAN",
+                            "2": "WILLIAMS",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 138,
+                            "1": "LUCILLE",
+                            "2": "DEE",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 139,
+                            "1": "EWAN",
+                            "2": "GOODING",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 140,
+                            "1": "WHOOPI",
+                            "2": "HURT",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 141,
+                            "1": "CATE",
+                            "2": "HARRIS",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 142,
+                            "1": "JADA",
+                            "2": "RYDER",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 143,
+                            "1": "RIVER",
+                            "2": "DEAN",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 144,
+                            "1": "ANGELA",
+                            "2": "WITHERSPOON",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 145,
+                            "1": "KIM",
+                            "2": "ALLEN",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 146,
+                            "1": "ALBERT",
+                            "2": "JOHANSSON",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 147,
+                            "1": "FAY",
+                            "2": "WINSLET",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 148,
+                            "1": "EMILY",
+                            "2": "DEE",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 149,
+                            "1": "RUSSELL",
+                            "2": "TEMPLE",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 150,
+                            "1": "JAYNE",
+                            "2": "NOLTE",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 151,
+                            "1": "GEOFFREY",
+                            "2": "HESTON",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 152,
+                            "1": "BEN",
+                            "2": "HARRIS",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 153,
+                            "1": "MINNIE",
+                            "2": "KILMER",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 154,
+                            "1": "MERYL",
+                            "2": "GIBSON",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 155,
+                            "1": "IAN",
+                            "2": "TANDY",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 156,
+                            "1": "FAY",
+                            "2": "WOOD",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 157,
+                            "1": "GRETA",
+                            "2": "MALDEN",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 158,
+                            "1": "VIVIEN",
+                            "2": "BASINGER",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 159,
+                            "1": "LAURA",
+                            "2": "BRODY",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 160,
+                            "1": "CHRIS",
+                            "2": "DEPP",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 161,
+                            "1": "HARVEY",
+                            "2": "HOPE",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 162,
+                            "1": "OPRAH",
+                            "2": "KILMER",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 163,
+                            "1": "CHRISTOPHER",
+                            "2": "WEST",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 164,
+                            "1": "HUMPHREY",
+                            "2": "WILLIS",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 165,
+                            "1": "AL",
+                            "2": "GARLAND",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 166,
+                            "1": "NICK",
+                            "2": "DEGENERES",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 167,
+                            "1": "LAURENCE",
+                            "2": "BULLOCK",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 168,
+                            "1": "WILL",
+                            "2": "WILSON",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 169,
+                            "1": "KENNETH",
+                            "2": "HOFFMAN",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 170,
+                            "1": "MENA",
+                            "2": "HOPPER",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 171,
+                            "1": "OLYMPIA",
+                            "2": "PFEIFFER",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 172,
+                            "1": "GROUCHO",
+                            "2": "WILLIAMS",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 173,
+                            "1": "ALAN",
+                            "2": "DREYFUSS",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 174,
+                            "1": "MICHAEL",
+                            "2": "BENING",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 175,
+                            "1": "WILLIAM",
+                            "2": "HACKMAN",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 176,
+                            "1": "JON",
+                            "2": "CHASE",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 177,
+                            "1": "GENE",
+                            "2": "MCKELLEN",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 178,
+                            "1": "LISA",
+                            "2": "MONROE",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 179,
+                            "1": "ED",
+                            "2": "GUINESS",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 180,
+                            "1": "JEFF",
+                            "2": "SILVERSTONE",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 181,
+                            "1": "MATTHEW",
+                            "2": "CARREY",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 182,
+                            "1": "DEBBIE",
+                            "2": "AKROYD",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 183,
+                            "1": "RUSSELL",
+                            "2": "CLOSE",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 184,
+                            "1": "HUMPHREY",
+                            "2": "GARLAND",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 185,
+                            "1": "MICHAEL",
+                            "2": "BOLGER",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 186,
+                            "1": "JULIA",
+                            "2": "ZELLWEGER",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 187,
+                            "1": "RENEE",
+                            "2": "BALL",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 188,
+                            "1": "ROCK",
+                            "2": "DUKAKIS",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 189,
+                            "1": "CUBA",
+                            "2": "BIRCH",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 190,
+                            "1": "AUDREY",
+                            "2": "BAILEY",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 191,
+                            "1": "GREGORY",
+                            "2": "GOODING",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 192,
+                            "1": "JOHN",
+                            "2": "SUVARI",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 193,
+                            "1": "BURT",
+                            "2": "TEMPLE",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 194,
+                            "1": "MERYL",
+                            "2": "ALLEN",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 195,
+                            "1": "JAYNE",
+                            "2": "SILVERSTONE",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 196,
+                            "1": "BELA",
+                            "2": "WALKEN",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 197,
+                            "1": "REESE",
+                            "2": "WEST",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 198,
+                            "1": "MARY",
+                            "2": "KEITEL",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 199,
+                            "1": "JULIA",
+                            "2": "FAWCETT",
+                            "3": "2006-02-15 04:34:33"
+                        },
+                        {
+                            "0": 200,
+                            "1": "THORA",
+                            "2": "TEMPLE",
+                            "3": "2006-02-15 04:34:33"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "actor_id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 2
+                            }
+                        },
+                        {
+                            "title": "first_name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "last_name",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "last_update",
+                            "field": "3",
+                            "dataType": {
+                                "type": 26
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 200 records retrieved in 12.048ms"
+                    },
+                    "totalRowCount": 200,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from actor"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 28,
+                "end": 29,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "65914182-d2ad-4ff6-cefc-67752cb06770",
+                            "content": "OK, 0 records retrieved in 1.003ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 9
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 9,
+                            "length": 1
+                        },
+                        "contentStart": 8,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 30,
+                "end": 30,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "32a34c2c-828f-41fb-dda8-0c09517c22c3",
+                            "content": "OK, 0 records retrieved in 3.002ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 12
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 31,
+                "end": 35,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "a37b762d-bb94-427a-9505-ae3c1f9265a3",
+                            "content": "OK, 0 records retrieved in 25ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 115
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 36,
+                "end": 36,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "97763574-6a67-463d-db1c-745018024390",
+                            "content": "OK, 0 records retrieved in 2.004ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 25
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 37,
+                "end": 37,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "a9d3b945-830f-4945-8fa3-8f6bf2620b11",
+                            "content": "OK, 0 records retrieved in 1.981ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 16
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 38,
+                "end": 38,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 0,
+                            "index": 0,
+                            "content": "MySQL Error (1064): ClassicSession.run_sql: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'tabels' at line 1",
+                            "language": "ansi"
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": ""
+                    }
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 12
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 39,
+                "end": 39,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "9d6413a0-e214-4c8a-e8a4-89093c62ba02",
+                            "content": "OK, 0 records retrieved in 5.008ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 12
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 40,
+                "end": 48,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "f15d87da-bfc5-4173-dacc-4baba0d2a0a0",
+                            "content": "OK, 0 records retrieved in 26.99ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 209
+                        },
+                        "contentStart": 0,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 49,
+                "end": 49,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "d26db71e-394b-4e0d-f111-5964f0d04471"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 12
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "916a64c6-18e8-4ce4-8662-a501e3e3e81c",
+                    "resultId": "d26db71e-394b-4e0d-f111-5964f0d04471",
+                    "rows": [
+                        {
+                            "0": "mytable"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Tables_in_customer_db",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 3.984ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "show tables"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 50,
+                "end": 50,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "dc261200-d7e6-439a-b17f-ce85c135fef1"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 13
+                        },
+                        "contentStart": 1,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "916a64c6-18e8-4ce4-8662-a501e3e3e81c",
+                    "resultId": "dc261200-d7e6-439a-b17f-ce85c135fef1",
+                    "rows": [
+                        {
+                            "0": "no",
+                            "1": "int",
+                            "2": "NO",
+                            "3": "PRI",
+                            "4": null,
+                            "5": "auto_increment"
+                        },
+                        {
+                            "0": "name",
+                            "1": "char(20)",
+                            "2": "NO",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "age",
+                            "1": "tinyint",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "phone",
+                            "1": "varchar(20)",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "email",
+                            "1": "varchar(30)",
+                            "2": "NO",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "address",
+                            "1": "varchar(50)",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Field",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Type",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Null",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Key",
+                            "field": "3",
+                            "dataType": {
+                                "type": 46
+                            }
+                        },
+                        {
+                            "title": "Default",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Extra",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 6 records retrieved in 11.988ms"
+                    },
+                    "totalRowCount": 6,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "desc mytable"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 51,
+                "end": 51,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "f5b51858-5e40-4aca-f036-be80f4e87f81",
+                            "content": "OK, 0 records retrieved in 17.999ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 19
+                        },
+                        "contentStart": 1,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 52,
+                "end": 52,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 0,
+                            "index": 0,
+                            "content": "MySQL Error (1064): ClassicSession.run_sql: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'database' at line 1",
+                            "language": "ansi"
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": ""
+                    }
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 14
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 53,
+                "end": 53,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "30ba32a9-b810-4dfc-ac2f-0207ea9be57a",
+                            "content": "OK, 0 records retrieved in 2.999ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 12
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 54,
+                "end": 54,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "01dc5185-0aaf-4340-e81f-f70526bafa81"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 15
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "916a64c6-18e8-4ce4-8662-a501e3e3e81c",
+                    "resultId": "01dc5185-0aaf-4340-e81f-f70526bafa81",
+                    "rows": [
+                        {
+                            "0": "customer_db"
+                        },
+                        {
+                            "0": "dave"
+                        },
+                        {
+                            "0": "dbname"
+                        },
+                        {
+                            "0": "information_schema"
+                        },
+                        {
+                            "0": "mysql"
+                        },
+                        {
+                            "0": "performance_schema"
+                        },
+                        {
+                            "0": "sakila"
+                        },
+                        {
+                            "0": "sys"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Database",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 8 records retrieved in 2.997ms"
+                    },
+                    "totalRowCount": 8,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "show databases"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 55,
+                "end": 61,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "22da01dd-f210-4fd2-86c6-3565fd70e141",
+                            "content": "OK, 0 records retrieved in 26.997ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 191
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 62,
+                "end": 62,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "25b7ce80-17c3-42ed-dfff-926f58657434",
+                            "content": "OK, 1 row affected in 10ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 54
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 63,
+                "end": 63,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "99540177-5947-448e-ef1d-684fee02d592"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 22
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "916a64c6-18e8-4ce4-8662-a501e3e3e81c",
+                    "resultId": "99540177-5947-448e-ef1d-684fee02d592",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "i7",
+                            "2": "12700",
+                            "3": "Alder"
+                        },
+                        {
+                            "0": 2,
+                            "1": "i5",
+                            "2": "12600",
+                            "3": "Alder"
+                        },
+                        {
+                            "0": 3,
+                            "1": "ryzen7",
+                            "2": "5900",
+                            "3": "Vermeer"
+                        },
+                        {
+                            "0": 4,
+                            "1": "ryzen9",
+                            "2": "5900",
+                            "3": "Vermeer"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "modelnumber",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "series",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 4 records retrieved in 0.997ms"
+                    },
+                    "totalRowCount": 4,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from mytable"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 64,
+                "end": 66,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "d0d99935-8b58-47b4-ce53-206a4053c3b7",
+                            "content": "OK, 1 row affected in 1.998ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 90
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 90,
+                            "length": 1
+                        },
+                        "contentStart": 89,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 67,
+                "end": 67,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "9f1fac80-b64b-49d2-9b66-d0b1a2604394"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 38
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "916a64c6-18e8-4ce4-8662-a501e3e3e81c",
+                    "resultId": "9f1fac80-b64b-49d2-9b66-d0b1a2604394",
+                    "rows": [
+                        {
+                            "0": "i7",
+                            "1": "12700"
+                        },
+                        {
+                            "0": "i9",
+                            "1": "12900"
+                        },
+                        {
+                            "0": "ryzen9",
+                            "1": "5900"
+                        },
+                        {
+                            "0": "ryzen7",
+                            "1": "5900"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "name",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "modelnumber",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 4 records retrieved in 2.003ms"
+                    },
+                    "totalRowCount": 4,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select name, modelnumber from mytable"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 68,
+                "end": 68,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "8f92be55-586a-4f81-b24a-479c52b6168b"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 62
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 62,
+                            "length": 0
+                        },
+                        "contentStart": 61,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "916a64c6-18e8-4ce4-8662-a501e3e3e81c",
+                    "resultId": "8f92be55-586a-4f81-b24a-479c52b6168b",
+                    "rows": [
+                        {
+                            "0": "i7",
+                            "1": "12700"
+                        },
+                        {
+                            "0": "i9",
+                            "1": "12900"
+                        },
+                        {
+                            "0": "ryzen7",
+                            "1": "5900"
+                        },
+                        {
+                            "0": "ryzen9",
+                            "1": "5900"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "cpuname",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "cpunumber",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 4 records retrieved in 1.995ms"
+                    },
+                    "totalRowCount": 4,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select name as cpuname, modelnumber as cpunumber from mytable"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 69,
+                "end": 69,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "cededc14-344c-47be-a563-aa0246ff8fb3"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 50
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "916a64c6-18e8-4ce4-8662-a501e3e3e81c",
+                    "resultId": "cededc14-344c-47be-a563-aa0246ff8fb3",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "i7",
+                            "2": "12700",
+                            "3": "Alder"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "modelnumber",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "series",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 1.003ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from mytable where modelnumber = '12700'"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 70,
+                "end": 70,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "f1fc1c22-e95b-4bad-8ec1-4d2a89a63e0c"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 40
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "916a64c6-18e8-4ce4-8662-a501e3e3e81c",
+                    "resultId": "f1fc1c22-e95b-4bad-8ec1-4d2a89a63e0c",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "i7",
+                            "2": "12700",
+                            "3": "Alder"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "modelnumber",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "series",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 1.974ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from mytable where name = 'i7'"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 71,
+                "end": 71,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "0ce48409-341d-4c81-9378-da0f004d28cc"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 45
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "916a64c6-18e8-4ce4-8662-a501e3e3e81c",
+                    "resultId": "0ce48409-341d-4c81-9378-da0f004d28cc",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "i7",
+                            "2": "12700",
+                            "3": "Alder"
+                        },
+                        {
+                            "0": 2,
+                            "1": "i9",
+                            "2": "12900",
+                            "3": "Alder"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "modelnumber",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "series",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 2 records retrieved in 1ms"
+                    },
+                    "totalRowCount": 2,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from mytable where series = 'Alder'"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 72,
+                "end": 72,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "4afc5e4a-5934-4526-9779-884724b2e0ab"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 71
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "916a64c6-18e8-4ce4-8662-a501e3e3e81c",
+                    "resultId": "4afc5e4a-5934-4526-9779-884724b2e0ab",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "i7",
+                            "2": "12700",
+                            "3": "Alder"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "modelnumber",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "series",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 1.008ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from mytable where series = 'Alder' and modelnumber = '12700'"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 73,
+                "end": 73,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "60f2fddd-407b-44f8-b228-8f6273266422"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 45
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "916a64c6-18e8-4ce4-8662-a501e3e3e81c",
+                    "resultId": "60f2fddd-407b-44f8-b228-8f6273266422",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "i7",
+                            "2": "12700",
+                            "3": "Alder"
+                        },
+                        {
+                            "0": 2,
+                            "1": "i9",
+                            "2": "12900",
+                            "3": "Alder"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "modelnumber",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "series",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 2 records retrieved in 0.998ms"
+                    },
+                    "totalRowCount": 2,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from mytable where series like 'A%'"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 74,
+                "end": 74,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "a245a34f-04a2-48b1-a58e-f83b85cdb1a8",
+                            "content": "OK, 1 row affected in 1.998ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 46
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 75,
+                "end": 76,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "8aa86462-e2cd-4f63-d4bb-b2ae4c0a98f5",
+                            "content": "OK, 1 row affected in 2.988ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 65
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 77,
+                "end": 77,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "bd35eb6c-efe0-475d-dd6b-d55b7cfb1cf3"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 22
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "916a64c6-18e8-4ce4-8662-a501e3e3e81c",
+                    "resultId": "bd35eb6c-efe0-475d-dd6b-d55b7cfb1cf3",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "i7",
+                            "2": "12700",
+                            "3": "Alder"
+                        },
+                        {
+                            "0": 2,
+                            "1": "i5",
+                            "2": "12600",
+                            "3": "Alder"
+                        },
+                        {
+                            "0": 3,
+                            "1": "ryzen7",
+                            "2": "5900",
+                            "3": "Vermeer"
+                        },
+                        {
+                            "0": 4,
+                            "1": "ryzen9",
+                            "2": "5900",
+                            "3": "Vermeer"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "modelnumber",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "series",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 4 records retrieved in 0.99ms"
+                    },
+                    "totalRowCount": 4,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from mytable"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 78,
+                "end": 78,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "1489ec41-0457-4f4b-9569-6a76b1262228",
+                            "content": "OK, 1 row affected in 3.995ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 31
+                        },
+                        "contentStart": 1,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 79,
+                "end": 79,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "b7f4a6f4-54cf-4981-da4a-743088525368"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 22
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "916a64c6-18e8-4ce4-8662-a501e3e3e81c",
+                    "resultId": "b7f4a6f4-54cf-4981-da4a-743088525368",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "i7",
+                            "2": "12700",
+                            "3": "Alder"
+                        },
+                        {
+                            "0": 3,
+                            "1": "ryzen7",
+                            "2": "5900",
+                            "3": "Vermeer"
+                        },
+                        {
+                            "0": 4,
+                            "1": "ryzen9",
+                            "2": "5900",
+                            "3": "Vermeer"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "modelnumber",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "series",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 3 records retrieved in 1.001ms"
+                    },
+                    "totalRowCount": 3,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from mytable"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 80,
+                "end": 80,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "4ab1b03b-78fd-4bde-8a9c-8e57f8cdd2ae",
+                            "content": "OK, 3 rows affected in 5.001ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 20
+                        },
+                        "contentStart": 1,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 81,
+                "end": 81,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "dc254669-93a2-4e7f-fe19-75a4807d5126"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 12
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "916a64c6-18e8-4ce4-8662-a501e3e3e81c",
+                    "resultId": "dc254669-93a2-4e7f-fe19-75a4807d5126",
+                    "rows": [
+                        {
+                            "0": "mytable"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Tables_in_customer_db",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 4.001ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "show tables"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 82,
+                "end": 82,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "d2de522a-795d-4f9c-988f-67f84d3df335",
+                            "content": "OK, 0 records retrieved in 39.004ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 19
+                        },
+                        "contentStart": 1,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 19,
+                            "length": 0
+                        },
+                        "contentStart": 18,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 83,
+                "end": 83,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "54a52faa-696a-47f2-c5c9-cc06ebd86eef",
+                            "content": "OK, 0 records retrieved in 4ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 12
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 84,
+                "end": 84,
+                "language": "mysql",
+                "currentHeight": 180,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        }
+    ]
+}

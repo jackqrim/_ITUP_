@@ -1,0 +1,5252 @@
+{
+    "type": "MySQLNotebook",
+    "version": "1.0",
+    "caption": "DB Notebook",
+    "content": "\\about\n/* itup_rv1 모듈 10 sakila */\n-- #81\nuse sakila;\nshow tables;\n-- #82\nselect * from film limit 1;\nselect count(*) from film;\nselect distinct rating from film;\nselect distinct release_year from film;\nselect * from rental limit 10;\nselect * from rental where inventory_id = 367;\n-- #83\nselect * from inventory limit 1;\nselect * from customer limit 1;\nselect * from address limit 1;\nselect count(*) from customer;\nselect * from payment limit 1;\nselect sum(amount), avg(amount), max(amount), min(amount)\nfrom payment;\nselect * from rental where inventory_id = 367 and staff_id = 1;\nselect rating from film group by rating;\nselect rating, count(*) from film group by rating;\nselect rating, count(*) from film \nwhere rating = 'PG' or rating = 'G'\ngroup by rating;\nselect title from film where rating = 'G';\nselect title from film where rating = 'G' or rating = 'PG';\nselect title from film \nwhere \n    (rating = 'G' or rating = 'PG') AND\n    (release_year = 2006 or release_year = 2007);\n-- #84\nselect rating, count(*) from film GROUP by rating;\nselect rating, count(*), avg(rental_rate) from film GROUP by rating;\nselect rating, count(*), avg(rental_rate) \nfrom film \ngroup by rating\norder by avg(rental_rate);\nselect \n    rating, count(*) as total_films, \n    avg(rental_rate) as avg_rental_rate\nfrom film \ngroup by rating\norder by avg_rental_rate;\n\n-- #85 (ex)\nselect \n    rating, count(*)\n    from film\n    where length >= 130\n    group by rating;\n",
+    "options": {
+        "tabSize": 4,
+        "indentSize": 4,
+        "insertSpaces": true,
+        "defaultEOL": "LF",
+        "trimAutoWhitespace": true
+    },
+    "viewState": {
+        "cursorState": [
+            {
+                "inSelectionMode": false,
+                "selectionStart": {
+                    "lineNumber": 53,
+                    "column": 1
+                },
+                "position": {
+                    "lineNumber": 53,
+                    "column": 1
+                }
+            }
+        ],
+        "viewState": {
+            "scrollLeft": 0,
+            "firstPosition": {
+                "lineNumber": 40,
+                "column": 1
+            },
+            "firstPositionDeltaTop": 13
+        },
+        "contributionsState": {
+            "editor.contrib.folding": {},
+            "editor.contrib.wordHighlighter": false
+        }
+    },
+    "contexts": [
+        {
+            "state": {
+                "start": 1,
+                "end": 1,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "content": "Welcome to the MySQL Shell - DB Notebook.\n\nPress Ctrl+Enter to execute the code block.\n\nExecute \\sql to switch to SQL, \\js to JavaScript and \\ts to TypeScript mode.\nExecute \\help or \\? for help;",
+                            "language": "ansi"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 6
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 2,
+                "end": 3,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "6903ec91-7f0f-40d2-cea8-e201c9f75f9c",
+                            "content": "OK, 0 records retrieved in 0.991ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 34
+                        },
+                        "contentStart": 0,
+                        "state": 1
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 4,
+                "end": 5,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "d655531d-c01b-4e6b-ebe7-add85a75e41a",
+                        "a243b421-c6b6-4b4d-98d0-1666bef5f25c"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 11
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 11,
+                            "length": 13
+                        },
+                        "contentStart": 12,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "a4410002-8c3b-4d3a-920e-cf814d838231",
+                    "resultId": "d655531d-c01b-4e6b-ebe7-add85a75e41a",
+                    "rows": [
+                        {
+                            "0": "actor"
+                        },
+                        {
+                            "0": "actor_info"
+                        },
+                        {
+                            "0": "address"
+                        },
+                        {
+                            "0": "category"
+                        },
+                        {
+                            "0": "city"
+                        },
+                        {
+                            "0": "country"
+                        },
+                        {
+                            "0": "customer"
+                        },
+                        {
+                            "0": "customer_list"
+                        },
+                        {
+                            "0": "film"
+                        },
+                        {
+                            "0": "film_actor"
+                        },
+                        {
+                            "0": "film_category"
+                        },
+                        {
+                            "0": "film_list"
+                        },
+                        {
+                            "0": "film_text"
+                        },
+                        {
+                            "0": "inventory"
+                        },
+                        {
+                            "0": "language"
+                        },
+                        {
+                            "0": "nicer_but_slower_film_list"
+                        },
+                        {
+                            "0": "payment"
+                        },
+                        {
+                            "0": "rental"
+                        },
+                        {
+                            "0": "sales_by_film_category"
+                        },
+                        {
+                            "0": "sales_by_store"
+                        },
+                        {
+                            "0": "staff"
+                        },
+                        {
+                            "0": "staff_list"
+                        },
+                        {
+                            "0": "store"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Tables_in_sakila",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 23 records retrieved in 8.004ms"
+                    },
+                    "totalRowCount": 23,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 1,
+                    "sql": "\nshow tables"
+                },
+                {
+                    "tabId": "a4410002-8c3b-4d3a-920e-cf814d838231",
+                    "resultId": "a243b421-c6b6-4b4d-98d0-1666bef5f25c",
+                    "rows": [],
+                    "executionInfo": {
+                        "text": "OK, 0 records retrieved in 2ms",
+                        "type": 4
+                    },
+                    "totalRowCount": 0,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "use sakila"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 6,
+                "end": 6,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "2ac68671-a8d1-45b7-8255-13adfe805e8e",
+                            "content": "OK, 0 records retrieved in 1.006ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 6
+                        },
+                        "contentStart": 0,
+                        "state": 1
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 7,
+                "end": 7,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "3696c498-9bf2-4451-9f0c-b7277336c7ac"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 27
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "a4410002-8c3b-4d3a-920e-cf814d838231",
+                    "resultId": "3696c498-9bf2-4451-9f0c-b7277336c7ac",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "ACADEMY DINOSAUR",
+                            "2": "A Epic Drama of a Feminist And a Mad Scientist who must Battle a Teacher in The Canadian Rockies",
+                            "3": 2006,
+                            "4": 1,
+                            "5": null,
+                            "6": 6,
+                            "7": "0.99",
+                            "8": 86,
+                            "9": "20.99",
+                            "10": "PG",
+                            "11": "Deleted Scenes,Behind the Scenes",
+                            "12": "2006-02-15 05:03:42"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "film_id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 2
+                            }
+                        },
+                        {
+                            "title": "title",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "description",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "release_year",
+                            "field": "3",
+                            "dataType": {
+                                "type": 1
+                            }
+                        },
+                        {
+                            "title": "language_id",
+                            "field": "4",
+                            "dataType": {
+                                "type": 1
+                            }
+                        },
+                        {
+                            "title": "original_language_id",
+                            "field": "5",
+                            "dataType": {
+                                "type": 1
+                            }
+                        },
+                        {
+                            "title": "rental_duration",
+                            "field": "6",
+                            "dataType": {
+                                "type": 1
+                            }
+                        },
+                        {
+                            "title": "rental_rate",
+                            "field": "7",
+                            "dataType": {
+                                "type": 10
+                            }
+                        },
+                        {
+                            "title": "length",
+                            "field": "8",
+                            "dataType": {
+                                "type": 2
+                            }
+                        },
+                        {
+                            "title": "replacement_cost",
+                            "field": "9",
+                            "dataType": {
+                                "type": 10
+                            }
+                        },
+                        {
+                            "title": "rating",
+                            "field": "10",
+                            "dataType": {
+                                "type": 46
+                            }
+                        },
+                        {
+                            "title": "special_features",
+                            "field": "11",
+                            "dataType": {
+                                "type": 47
+                            }
+                        },
+                        {
+                            "title": "last_update",
+                            "field": "12",
+                            "dataType": {
+                                "type": 26
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 9.001ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from film limit 1"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 8,
+                "end": 8,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "b83f73ac-e2f0-4a3e-a529-6ed064ecc14d"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 26
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "a4410002-8c3b-4d3a-920e-cf814d838231",
+                    "resultId": "b83f73ac-e2f0-4a3e-a529-6ed064ecc14d",
+                    "rows": [
+                        {
+                            "0": 1000
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "count(*)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 12.009ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select count(*) from film"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 9,
+                "end": 9,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "fecf95e8-917f-4b0c-c5bf-31ee5c8b9f54"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 33
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "a4410002-8c3b-4d3a-920e-cf814d838231",
+                    "resultId": "fecf95e8-917f-4b0c-c5bf-31ee5c8b9f54",
+                    "rows": [
+                        {
+                            "0": "PG"
+                        },
+                        {
+                            "0": "G"
+                        },
+                        {
+                            "0": "NC-17"
+                        },
+                        {
+                            "0": "PG-13"
+                        },
+                        {
+                            "0": "R"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "rating",
+                            "field": "0",
+                            "dataType": {
+                                "type": 46
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 5 records retrieved in 1.999ms"
+                    },
+                    "totalRowCount": 5,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select distinct rating from film"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 10,
+                "end": 10,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "c21046c0-a351-46c3-9cb4-26ed8204467a"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 39
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "a4410002-8c3b-4d3a-920e-cf814d838231",
+                    "resultId": "c21046c0-a351-46c3-9cb4-26ed8204467a",
+                    "rows": [
+                        {
+                            "0": 2006
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "release_year",
+                            "field": "0",
+                            "dataType": {
+                                "type": 1
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 2.001ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select distinct release_year from film"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 11,
+                "end": 11,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "cebca076-708a-470b-f835-21e86a02bd2d"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 30
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "a4410002-8c3b-4d3a-920e-cf814d838231",
+                    "resultId": "cebca076-708a-470b-f835-21e86a02bd2d",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "2005-05-24 22:53:30",
+                            "2": 367,
+                            "3": 130,
+                            "4": "2005-05-26 22:04:30",
+                            "5": 1,
+                            "6": "2006-02-15 21:30:53"
+                        },
+                        {
+                            "0": 2,
+                            "1": "2005-05-24 22:54:33",
+                            "2": 1525,
+                            "3": 459,
+                            "4": "2005-05-28 19:40:33",
+                            "5": 1,
+                            "6": "2006-02-15 21:30:53"
+                        },
+                        {
+                            "0": 3,
+                            "1": "2005-05-24 23:03:39",
+                            "2": 1711,
+                            "3": 408,
+                            "4": "2005-06-01 22:12:39",
+                            "5": 1,
+                            "6": "2006-02-15 21:30:53"
+                        },
+                        {
+                            "0": 4,
+                            "1": "2005-05-24 23:04:41",
+                            "2": 2452,
+                            "3": 333,
+                            "4": "2005-06-03 01:43:41",
+                            "5": 2,
+                            "6": "2006-02-15 21:30:53"
+                        },
+                        {
+                            "0": 5,
+                            "1": "2005-05-24 23:05:21",
+                            "2": 2079,
+                            "3": 222,
+                            "4": "2005-06-02 04:33:21",
+                            "5": 1,
+                            "6": "2006-02-15 21:30:53"
+                        },
+                        {
+                            "0": 6,
+                            "1": "2005-05-24 23:08:07",
+                            "2": 2792,
+                            "3": 549,
+                            "4": "2005-05-27 01:32:07",
+                            "5": 1,
+                            "6": "2006-02-15 21:30:53"
+                        },
+                        {
+                            "0": 7,
+                            "1": "2005-05-24 23:11:53",
+                            "2": 3995,
+                            "3": 269,
+                            "4": "2005-05-29 20:34:53",
+                            "5": 2,
+                            "6": "2006-02-15 21:30:53"
+                        },
+                        {
+                            "0": 8,
+                            "1": "2005-05-24 23:31:46",
+                            "2": 2346,
+                            "3": 239,
+                            "4": "2005-05-27 23:33:46",
+                            "5": 2,
+                            "6": "2006-02-15 21:30:53"
+                        },
+                        {
+                            "0": 9,
+                            "1": "2005-05-25 00:00:40",
+                            "2": 2580,
+                            "3": 126,
+                            "4": "2005-05-28 00:22:40",
+                            "5": 1,
+                            "6": "2006-02-15 21:30:53"
+                        },
+                        {
+                            "0": 10,
+                            "1": "2005-05-25 00:02:21",
+                            "2": 1824,
+                            "3": 399,
+                            "4": "2005-05-31 22:44:21",
+                            "5": 2,
+                            "6": "2006-02-15 21:30:53"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "rental_id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "rental_date",
+                            "field": "1",
+                            "dataType": {
+                                "type": 26
+                            }
+                        },
+                        {
+                            "title": "inventory_id",
+                            "field": "2",
+                            "dataType": {
+                                "type": 3
+                            }
+                        },
+                        {
+                            "title": "customer_id",
+                            "field": "3",
+                            "dataType": {
+                                "type": 2
+                            }
+                        },
+                        {
+                            "title": "return_date",
+                            "field": "4",
+                            "dataType": {
+                                "type": 26
+                            }
+                        },
+                        {
+                            "title": "staff_id",
+                            "field": "5",
+                            "dataType": {
+                                "type": 1
+                            }
+                        },
+                        {
+                            "title": "last_update",
+                            "field": "6",
+                            "dataType": {
+                                "type": 26
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 10 records retrieved in 6.958ms"
+                    },
+                    "totalRowCount": 10,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from rental limit 10"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 12,
+                "end": 12,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "85da42bc-ecd1-446b-c4ec-e4ce1c5d8b53"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 46
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "a4410002-8c3b-4d3a-920e-cf814d838231",
+                    "resultId": "85da42bc-ecd1-446b-c4ec-e4ce1c5d8b53",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "2005-05-24 22:53:30",
+                            "2": 367,
+                            "3": 130,
+                            "4": "2005-05-26 22:04:30",
+                            "5": 1,
+                            "6": "2006-02-15 21:30:53"
+                        },
+                        {
+                            "0": 1577,
+                            "1": "2005-06-16 04:03:28",
+                            "2": 367,
+                            "3": 327,
+                            "4": "2005-06-24 22:40:28",
+                            "5": 2,
+                            "6": "2006-02-15 21:30:53"
+                        },
+                        {
+                            "0": 3584,
+                            "1": "2005-07-06 04:16:43",
+                            "2": 367,
+                            "3": 207,
+                            "4": "2005-07-13 07:08:43",
+                            "5": 1,
+                            "6": "2006-02-15 21:30:53"
+                        },
+                        {
+                            "0": 10507,
+                            "1": "2005-08-01 11:22:20",
+                            "2": 367,
+                            "3": 45,
+                            "4": "2005-08-04 13:18:20",
+                            "5": 2,
+                            "6": "2006-02-15 21:30:53"
+                        },
+                        {
+                            "0": 13641,
+                            "1": "2005-08-20 07:34:42",
+                            "2": 367,
+                            "3": 281,
+                            "4": "2005-08-26 05:18:42",
+                            "5": 1,
+                            "6": "2006-02-15 21:30:53"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "rental_id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "rental_date",
+                            "field": "1",
+                            "dataType": {
+                                "type": 26
+                            }
+                        },
+                        {
+                            "title": "inventory_id",
+                            "field": "2",
+                            "dataType": {
+                                "type": 3
+                            }
+                        },
+                        {
+                            "title": "customer_id",
+                            "field": "3",
+                            "dataType": {
+                                "type": 2
+                            }
+                        },
+                        {
+                            "title": "return_date",
+                            "field": "4",
+                            "dataType": {
+                                "type": 26
+                            }
+                        },
+                        {
+                            "title": "staff_id",
+                            "field": "5",
+                            "dataType": {
+                                "type": 1
+                            }
+                        },
+                        {
+                            "title": "last_update",
+                            "field": "6",
+                            "dataType": {
+                                "type": 26
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 5 records retrieved in 2.003ms"
+                    },
+                    "totalRowCount": 5,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from rental where inventory_id = 367"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 13,
+                "end": 13,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "d80ab13a-3e6a-4a6e-a64f-4b369ecb58d3",
+                            "content": "OK, 0 records retrieved in 0.995ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 6
+                        },
+                        "contentStart": 0,
+                        "state": 1
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 14,
+                "end": 14,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "4ed43e67-f460-49ae-c1ed-a2b8c8dc83d4"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 32
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "a4410002-8c3b-4d3a-920e-cf814d838231",
+                    "resultId": "4ed43e67-f460-49ae-c1ed-a2b8c8dc83d4",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": 1,
+                            "2": 1,
+                            "3": "2006-02-15 05:09:17"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "inventory_id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 3
+                            }
+                        },
+                        {
+                            "title": "film_id",
+                            "field": "1",
+                            "dataType": {
+                                "type": 2
+                            }
+                        },
+                        {
+                            "title": "store_id",
+                            "field": "2",
+                            "dataType": {
+                                "type": 1
+                            }
+                        },
+                        {
+                            "title": "last_update",
+                            "field": "3",
+                            "dataType": {
+                                "type": 26
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 4.009ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from inventory limit 1"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 15,
+                "end": 15,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "e5e1ba49-1a15-4d93-9fe6-d03af9cd3656"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 31
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "a4410002-8c3b-4d3a-920e-cf814d838231",
+                    "resultId": "e5e1ba49-1a15-4d93-9fe6-d03af9cd3656",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": 1,
+                            "2": "MARY",
+                            "3": "SMITH",
+                            "4": "MARY.SMITH@sakilacustomer.org",
+                            "5": 5,
+                            "6": 1,
+                            "7": "2006-02-14 22:04:36",
+                            "8": "2006-02-15 04:57:20"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "customer_id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 2
+                            }
+                        },
+                        {
+                            "title": "store_id",
+                            "field": "1",
+                            "dataType": {
+                                "type": 1
+                            }
+                        },
+                        {
+                            "title": "first_name",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "last_name",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "email",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "address_id",
+                            "field": "5",
+                            "dataType": {
+                                "type": 2
+                            }
+                        },
+                        {
+                            "title": "active",
+                            "field": "6",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "create_date",
+                            "field": "7",
+                            "dataType": {
+                                "type": 26
+                            }
+                        },
+                        {
+                            "title": "last_update",
+                            "field": "8",
+                            "dataType": {
+                                "type": 26
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 6.999ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from customer limit 1"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 16,
+                "end": 16,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "37c44860-fa76-4d21-df18-1595a06324bd"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 30
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "a4410002-8c3b-4d3a-920e-cf814d838231",
+                    "resultId": "37c44860-fa76-4d21-df18-1595a06324bd",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "47 MySakila Drive",
+                            "2": null,
+                            "3": "Alberta",
+                            "4": 300,
+                            "5": "",
+                            "6": "",
+                            "7": "",
+                            "8": "2014-09-25 22:30:27"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "address_id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 2
+                            }
+                        },
+                        {
+                            "title": "address",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "address2",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "district",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "city_id",
+                            "field": "4",
+                            "dataType": {
+                                "type": 2
+                            }
+                        },
+                        {
+                            "title": "postal_code",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "phone",
+                            "field": "6",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "location",
+                            "field": "7",
+                            "dataType": {
+                                "type": 34
+                            }
+                        },
+                        {
+                            "title": "last_update",
+                            "field": "8",
+                            "dataType": {
+                                "type": 26
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 58.965ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from address limit 1"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 17,
+                "end": 17,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "dbc9b0cf-75a3-42b6-f08a-7f4fe3b340c4"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 30
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "a4410002-8c3b-4d3a-920e-cf814d838231",
+                    "resultId": "dbc9b0cf-75a3-42b6-f08a-7f4fe3b340c4",
+                    "rows": [
+                        {
+                            "0": 599
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "count(*)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 3.999ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select count(*) from customer"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 18,
+                "end": 18,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "e17ebc18-91cd-4f9e-cd6a-82934810d180"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 30
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 30,
+                            "length": 0
+                        },
+                        "contentStart": 29,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "a4410002-8c3b-4d3a-920e-cf814d838231",
+                    "resultId": "e17ebc18-91cd-4f9e-cd6a-82934810d180",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": 1,
+                            "2": 1,
+                            "3": 76,
+                            "4": "2.99",
+                            "5": "2005-05-25 11:30:37",
+                            "6": "2006-02-15 22:12:30"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "payment_id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 2
+                            }
+                        },
+                        {
+                            "title": "customer_id",
+                            "field": "1",
+                            "dataType": {
+                                "type": 2
+                            }
+                        },
+                        {
+                            "title": "staff_id",
+                            "field": "2",
+                            "dataType": {
+                                "type": 1
+                            }
+                        },
+                        {
+                            "title": "rental_id",
+                            "field": "3",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "amount",
+                            "field": "4",
+                            "dataType": {
+                                "type": 10
+                            }
+                        },
+                        {
+                            "title": "payment_date",
+                            "field": "5",
+                            "dataType": {
+                                "type": 26
+                            }
+                        },
+                        {
+                            "title": "last_update",
+                            "field": "6",
+                            "dataType": {
+                                "type": 26
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 2.975ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from payment limit 1"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 19,
+                "end": 20,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "e180c26d-6acb-434d-a348-f6cc00fc2652"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 71
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "a4410002-8c3b-4d3a-920e-cf814d838231",
+                    "resultId": "e180c26d-6acb-434d-a348-f6cc00fc2652",
+                    "rows": [
+                        {
+                            "0": "67406.56",
+                            "1": "4.201356",
+                            "2": "11.99",
+                            "3": "0.00"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "sum(amount)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 10
+                            }
+                        },
+                        {
+                            "title": "avg(amount)",
+                            "field": "1",
+                            "dataType": {
+                                "type": 10
+                            }
+                        },
+                        {
+                            "title": "max(amount)",
+                            "field": "2",
+                            "dataType": {
+                                "type": 10
+                            }
+                        },
+                        {
+                            "title": "min(amount)",
+                            "field": "3",
+                            "dataType": {
+                                "type": 10
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 30.994ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select sum(amount), avg(amount), max(amount), min(amount)\nfrom payment"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 21,
+                "end": 21,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "65fae383-c944-4223-ceb7-1a8f5110624c"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 63
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "a4410002-8c3b-4d3a-920e-cf814d838231",
+                    "resultId": "65fae383-c944-4223-ceb7-1a8f5110624c",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "2005-05-24 22:53:30",
+                            "2": 367,
+                            "3": 130,
+                            "4": "2005-05-26 22:04:30",
+                            "5": 1,
+                            "6": "2006-02-15 21:30:53"
+                        },
+                        {
+                            "0": 3584,
+                            "1": "2005-07-06 04:16:43",
+                            "2": 367,
+                            "3": 207,
+                            "4": "2005-07-13 07:08:43",
+                            "5": 1,
+                            "6": "2006-02-15 21:30:53"
+                        },
+                        {
+                            "0": 13641,
+                            "1": "2005-08-20 07:34:42",
+                            "2": 367,
+                            "3": 281,
+                            "4": "2005-08-26 05:18:42",
+                            "5": 1,
+                            "6": "2006-02-15 21:30:53"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "rental_id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "rental_date",
+                            "field": "1",
+                            "dataType": {
+                                "type": 26
+                            }
+                        },
+                        {
+                            "title": "inventory_id",
+                            "field": "2",
+                            "dataType": {
+                                "type": 3
+                            }
+                        },
+                        {
+                            "title": "customer_id",
+                            "field": "3",
+                            "dataType": {
+                                "type": 2
+                            }
+                        },
+                        {
+                            "title": "return_date",
+                            "field": "4",
+                            "dataType": {
+                                "type": 26
+                            }
+                        },
+                        {
+                            "title": "staff_id",
+                            "field": "5",
+                            "dataType": {
+                                "type": 1
+                            }
+                        },
+                        {
+                            "title": "last_update",
+                            "field": "6",
+                            "dataType": {
+                                "type": 26
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 3 records retrieved in 3.005ms"
+                    },
+                    "totalRowCount": 3,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from rental where inventory_id = 367 and staff_id = 1"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 22,
+                "end": 22,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "76bf4e2a-305a-4720-d481-2d0cead4a46f"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 40
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "a4410002-8c3b-4d3a-920e-cf814d838231",
+                    "resultId": "76bf4e2a-305a-4720-d481-2d0cead4a46f",
+                    "rows": [
+                        {
+                            "0": "PG"
+                        },
+                        {
+                            "0": "G"
+                        },
+                        {
+                            "0": "NC-17"
+                        },
+                        {
+                            "0": "PG-13"
+                        },
+                        {
+                            "0": "R"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "rating",
+                            "field": "0",
+                            "dataType": {
+                                "type": 46
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 5 records retrieved in 2.963ms"
+                    },
+                    "totalRowCount": 5,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select rating from film group by rating"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 23,
+                "end": 23,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "7657c01f-72ba-4895-c94c-9d5073d58363"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 50
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "a4410002-8c3b-4d3a-920e-cf814d838231",
+                    "resultId": "7657c01f-72ba-4895-c94c-9d5073d58363",
+                    "rows": [
+                        {
+                            "0": "PG",
+                            "1": 194
+                        },
+                        {
+                            "0": "G",
+                            "1": 178
+                        },
+                        {
+                            "0": "NC-17",
+                            "1": 210
+                        },
+                        {
+                            "0": "PG-13",
+                            "1": 223
+                        },
+                        {
+                            "0": "R",
+                            "1": 195
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "rating",
+                            "field": "0",
+                            "dataType": {
+                                "type": 46
+                            }
+                        },
+                        {
+                            "title": "count(*)",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 5 records retrieved in 3.996ms"
+                    },
+                    "totalRowCount": 5,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select rating, count(*) from film group by rating"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 24,
+                "end": 26,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "244d78f0-5ae7-45b5-ddae-bcdcdb1e86f4"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 87
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "a4410002-8c3b-4d3a-920e-cf814d838231",
+                    "resultId": "244d78f0-5ae7-45b5-ddae-bcdcdb1e86f4",
+                    "rows": [
+                        {
+                            "0": "PG",
+                            "1": 194
+                        },
+                        {
+                            "0": "G",
+                            "1": 178
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "rating",
+                            "field": "0",
+                            "dataType": {
+                                "type": 46
+                            }
+                        },
+                        {
+                            "title": "count(*)",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 2 records retrieved in 2.998ms"
+                    },
+                    "totalRowCount": 2,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select rating, count(*) from film \nwhere rating = 'PG' or rating = 'G'\ngroup by rating"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 27,
+                "end": 27,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "7a635a40-1bb7-4d72-c504-dff93e145e12"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 42
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "a4410002-8c3b-4d3a-920e-cf814d838231",
+                    "resultId": "7a635a40-1bb7-4d72-c504-dff93e145e12",
+                    "rows": [
+                        {
+                            "0": "ACE GOLDFINGER"
+                        },
+                        {
+                            "0": "AFFAIR PREJUDICE"
+                        },
+                        {
+                            "0": "AFRICAN EGG"
+                        },
+                        {
+                            "0": "ALAMO VIDEOTAPE"
+                        },
+                        {
+                            "0": "AMISTAD MIDSUMMER"
+                        },
+                        {
+                            "0": "ANGELS LIFE"
+                        },
+                        {
+                            "0": "ANNIE IDENTITY"
+                        },
+                        {
+                            "0": "ARMAGEDDON LOST"
+                        },
+                        {
+                            "0": "ATLANTIS CAUSE"
+                        },
+                        {
+                            "0": "AUTUMN CROW"
+                        },
+                        {
+                            "0": "BAKED CLEOPATRA"
+                        },
+                        {
+                            "0": "BALLROOM MOCKINGBIRD"
+                        },
+                        {
+                            "0": "BARBARELLA STREETCAR"
+                        },
+                        {
+                            "0": "BAREFOOT MANCHURIAN"
+                        },
+                        {
+                            "0": "BEACH HEARTBREAKERS"
+                        },
+                        {
+                            "0": "BEAUTY GREASE"
+                        },
+                        {
+                            "0": "BIRD INDEPENDENCE"
+                        },
+                        {
+                            "0": "BIRDS PERDITION"
+                        },
+                        {
+                            "0": "BLANKET BEVERLY"
+                        },
+                        {
+                            "0": "BLOOD ARGONAUTS"
+                        },
+                        {
+                            "0": "BLUES INSTINCT"
+                        },
+                        {
+                            "0": "BONNIE HOLOCAUST"
+                        },
+                        {
+                            "0": "BORROWERS BEDAZZLED"
+                        },
+                        {
+                            "0": "BREAKFAST GOLDFINGER"
+                        },
+                        {
+                            "0": "BRIDE INTRIGUE"
+                        },
+                        {
+                            "0": "BUGSY SONG"
+                        },
+                        {
+                            "0": "BULWORTH COMMANDMENTS"
+                        },
+                        {
+                            "0": "BUNCH MINDS"
+                        },
+                        {
+                            "0": "BUTTERFLY CHOCOLAT"
+                        },
+                        {
+                            "0": "CAPER MOTIONS"
+                        },
+                        {
+                            "0": "CASABLANCA SUPER"
+                        },
+                        {
+                            "0": "CASUALTIES ENCINO"
+                        },
+                        {
+                            "0": "CAT CONEHEADS"
+                        },
+                        {
+                            "0": "CATCH AMISTAD"
+                        },
+                        {
+                            "0": "CHEAPER CLYDE"
+                        },
+                        {
+                            "0": "CHISUM BEHAVIOR"
+                        },
+                        {
+                            "0": "CHITTY LOCK"
+                        },
+                        {
+                            "0": "CITIZEN SHREK"
+                        },
+                        {
+                            "0": "CLASH FREDDY"
+                        },
+                        {
+                            "0": "CLERKS ANGELS"
+                        },
+                        {
+                            "0": "COLDBLOODED DARLING"
+                        },
+                        {
+                            "0": "COLOR PHILADELPHIA"
+                        },
+                        {
+                            "0": "CONNECTION MICROCOSMOS"
+                        },
+                        {
+                            "0": "CONQUERER NUTS"
+                        },
+                        {
+                            "0": "CONTROL ANTHEM"
+                        },
+                        {
+                            "0": "CROSSROADS CASUALTIES"
+                        },
+                        {
+                            "0": "CRUELTY UNFORGIVEN"
+                        },
+                        {
+                            "0": "DADDY PITTSBURGH"
+                        },
+                        {
+                            "0": "DAISY MENAGERIE"
+                        },
+                        {
+                            "0": "DANCING FEVER"
+                        },
+                        {
+                            "0": "DARN FORRESTER"
+                        },
+                        {
+                            "0": "DAY UNFAITHFUL"
+                        },
+                        {
+                            "0": "DAZED PUNK"
+                        },
+                        {
+                            "0": "DESPERATE TRAINSPOTTING"
+                        },
+                        {
+                            "0": "DESTINY SATURDAY"
+                        },
+                        {
+                            "0": "DIARY PANIC"
+                        },
+                        {
+                            "0": "DIVORCE SHINING"
+                        },
+                        {
+                            "0": "DOCTOR GRAIL"
+                        },
+                        {
+                            "0": "DOGMA FAMILY"
+                        },
+                        {
+                            "0": "DOWNHILL ENOUGH"
+                        },
+                        {
+                            "0": "DRACULA CRYSTAL"
+                        },
+                        {
+                            "0": "DRUMLINE CYCLONE"
+                        },
+                        {
+                            "0": "DUDE BLINDNESS"
+                        },
+                        {
+                            "0": "DUFFEL APOCALYPSE"
+                        },
+                        {
+                            "0": "DWARFS ALTER"
+                        },
+                        {
+                            "0": "EASY GLADIATOR"
+                        },
+                        {
+                            "0": "EMPIRE MALKOVICH"
+                        },
+                        {
+                            "0": "ENCINO ELF"
+                        },
+                        {
+                            "0": "EVE RESURRECTION"
+                        },
+                        {
+                            "0": "EXCITEMENT EVE"
+                        },
+                        {
+                            "0": "EXORCIST STING"
+                        },
+                        {
+                            "0": "EXTRAORDINARY CONQUERER"
+                        },
+                        {
+                            "0": "FANTASIA PARK"
+                        },
+                        {
+                            "0": "FARGO GANDHI"
+                        },
+                        {
+                            "0": "FIDELITY DEVIL"
+                        },
+                        {
+                            "0": "FIREHOUSE VIETNAM"
+                        },
+                        {
+                            "0": "FLATLINERS KILLER"
+                        },
+                        {
+                            "0": "GARDEN ISLAND"
+                        },
+                        {
+                            "0": "GHOST GROUNDHOG"
+                        },
+                        {
+                            "0": "GILBERT PELICAN"
+                        },
+                        {
+                            "0": "GLASS DYING"
+                        },
+                        {
+                            "0": "GOLDFINGER SENSIBILITY"
+                        },
+                        {
+                            "0": "GOSFORD DONNIE"
+                        },
+                        {
+                            "0": "GRADUATE LORD"
+                        },
+                        {
+                            "0": "GRAPES FURY"
+                        },
+                        {
+                            "0": "GREASE YOUTH"
+                        },
+                        {
+                            "0": "GUN BONNIE"
+                        },
+                        {
+                            "0": "HANGING DEEP"
+                        },
+                        {
+                            "0": "HAPPINESS UNITED"
+                        },
+                        {
+                            "0": "HARPER DYING"
+                        },
+                        {
+                            "0": "HEARTBREAKERS BRIGHT"
+                        },
+                        {
+                            "0": "HEAVYWEIGHTS BEAST"
+                        },
+                        {
+                            "0": "HILLS NEIGHBORS"
+                        },
+                        {
+                            "0": "HOCUS FRIDA"
+                        },
+                        {
+                            "0": "HOOK CHARIOTS"
+                        },
+                        {
+                            "0": "HOOSIERS BIRDCAGE"
+                        },
+                        {
+                            "0": "HUNGER ROOF"
+                        },
+                        {
+                            "0": "HYDE DOCTOR"
+                        },
+                        {
+                            "0": "INTRIGUE WORST"
+                        },
+                        {
+                            "0": "ITALIAN AFRICAN"
+                        },
+                        {
+                            "0": "JAPANESE RUN"
+                        },
+                        {
+                            "0": "JAWS HARRY"
+                        },
+                        {
+                            "0": "JUMANJI BLADE"
+                        },
+                        {
+                            "0": "KILL BROTHERHOOD"
+                        },
+                        {
+                            "0": "LAWLESS VISION"
+                        },
+                        {
+                            "0": "LIBERTY MAGNIFICENT"
+                        },
+                        {
+                            "0": "LONELY ELEPHANT"
+                        },
+                        {
+                            "0": "LOVER TRUMAN"
+                        },
+                        {
+                            "0": "LUST LOCK"
+                        },
+                        {
+                            "0": "MALKOVICH PET"
+                        },
+                        {
+                            "0": "MARRIED GO"
+                        },
+                        {
+                            "0": "MEET CHOCOLATE"
+                        },
+                        {
+                            "0": "MENAGERIE RUSHMORE"
+                        },
+                        {
+                            "0": "MIDNIGHT WESTWARD"
+                        },
+                        {
+                            "0": "MIDSUMMER GROUNDHOG"
+                        },
+                        {
+                            "0": "MINORITY KISS"
+                        },
+                        {
+                            "0": "MOB DUFFEL"
+                        },
+                        {
+                            "0": "MONTEREY LABYRINTH"
+                        },
+                        {
+                            "0": "MOONWALKER FOOL"
+                        },
+                        {
+                            "0": "MOSQUITO ARMAGEDDON"
+                        },
+                        {
+                            "0": "MULAN MOON"
+                        },
+                        {
+                            "0": "MUSCLE BRIGHT"
+                        },
+                        {
+                            "0": "MUSSOLINI SPOILERS"
+                        },
+                        {
+                            "0": "NEWSIES STORY"
+                        },
+                        {
+                            "0": "NOON PAPI"
+                        },
+                        {
+                            "0": "NOVOCAINE FLIGHT"
+                        },
+                        {
+                            "0": "OPERATION OPERATION"
+                        },
+                        {
+                            "0": "PACIFIC AMISTAD"
+                        },
+                        {
+                            "0": "PANIC CLUB"
+                        },
+                        {
+                            "0": "PANKY SUBMARINE"
+                        },
+                        {
+                            "0": "PICKUP DRIVING"
+                        },
+                        {
+                            "0": "POTLUCK MIXED"
+                        },
+                        {
+                            "0": "PRIMARY GLASS"
+                        },
+                        {
+                            "0": "PULP BEVERLY"
+                        },
+                        {
+                            "0": "REBEL AIRPORT"
+                        },
+                        {
+                            "0": "RINGS HEARTBREAKERS"
+                        },
+                        {
+                            "0": "ROCK INSTINCT"
+                        },
+                        {
+                            "0": "SAGEBRUSH CLUELESS"
+                        },
+                        {
+                            "0": "SAINTS BRIDE"
+                        },
+                        {
+                            "0": "SAMURAI LION"
+                        },
+                        {
+                            "0": "SASSY PACKER"
+                        },
+                        {
+                            "0": "SATISFACTION CONFIDENTIAL"
+                        },
+                        {
+                            "0": "SATURDAY LAMBS"
+                        },
+                        {
+                            "0": "SCISSORHANDS SLUMS"
+                        },
+                        {
+                            "0": "SECRETS PARADISE"
+                        },
+                        {
+                            "0": "SHINING ROSES"
+                        },
+                        {
+                            "0": "SIDE ARK"
+                        },
+                        {
+                            "0": "SLEEPLESS MONSOON"
+                        },
+                        {
+                            "0": "SMILE EARRING"
+                        },
+                        {
+                            "0": "SNOWMAN ROLLERCOASTER"
+                        },
+                        {
+                            "0": "SPIKING ELEMENT"
+                        },
+                        {
+                            "0": "SPOILERS HELLFIGHTERS"
+                        },
+                        {
+                            "0": "STONE FIRE"
+                        },
+                        {
+                            "0": "STRANGER STRANGERS"
+                        },
+                        {
+                            "0": "SUICIDES SILENCE"
+                        },
+                        {
+                            "0": "SUMMER SCARFACE"
+                        },
+                        {
+                            "0": "SWEETHEARTS SUSPECTS"
+                        },
+                        {
+                            "0": "TEEN APOLLO"
+                        },
+                        {
+                            "0": "TIMBERLAND SKY"
+                        },
+                        {
+                            "0": "TORQUE BOUND"
+                        },
+                        {
+                            "0": "TRACY CIDER"
+                        },
+                        {
+                            "0": "TRAFFIC HOBBIT"
+                        },
+                        {
+                            "0": "TRAP GUYS"
+                        },
+                        {
+                            "0": "TRUMAN CRAZY"
+                        },
+                        {
+                            "0": "TURN STAR"
+                        },
+                        {
+                            "0": "TYCOON GATHERING"
+                        },
+                        {
+                            "0": "UNBREAKABLE KARATE"
+                        },
+                        {
+                            "0": "VALLEY PACKER"
+                        },
+                        {
+                            "0": "WAKE JAWS"
+                        },
+                        {
+                            "0": "WAR NOTTING"
+                        },
+                        {
+                            "0": "WARDROBE PHANTOM"
+                        },
+                        {
+                            "0": "WARLOCK WEREWOLF"
+                        },
+                        {
+                            "0": "WARS PLUTO"
+                        },
+                        {
+                            "0": "WATERFRONT DELIVERANCE"
+                        },
+                        {
+                            "0": "WATERSHIP FRONTIER"
+                        },
+                        {
+                            "0": "WEREWOLF LOLA"
+                        },
+                        {
+                            "0": "WEST LION"
+                        },
+                        {
+                            "0": "YOUNG LANGUAGE"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "title",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 178 records retrieved in 2.997ms"
+                    },
+                    "totalRowCount": 178,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select title from film where rating = 'G'"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 28,
+                "end": 28,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "56058424-8d7b-4fc2-8b02-5bfe947d2c9c"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 59
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "a4410002-8c3b-4d3a-920e-cf814d838231",
+                    "resultId": "56058424-8d7b-4fc2-8b02-5bfe947d2c9c",
+                    "rows": [
+                        {
+                            "0": "ACADEMY DINOSAUR"
+                        },
+                        {
+                            "0": "ACE GOLDFINGER"
+                        },
+                        {
+                            "0": "AFFAIR PREJUDICE"
+                        },
+                        {
+                            "0": "AFRICAN EGG"
+                        },
+                        {
+                            "0": "AGENT TRUMAN"
+                        },
+                        {
+                            "0": "ALAMO VIDEOTAPE"
+                        },
+                        {
+                            "0": "ALASKA PHANTOM"
+                        },
+                        {
+                            "0": "ALI FOREVER"
+                        },
+                        {
+                            "0": "AMADEUS HOLY"
+                        },
+                        {
+                            "0": "AMISTAD MIDSUMMER"
+                        },
+                        {
+                            "0": "ANGELS LIFE"
+                        },
+                        {
+                            "0": "ANNIE IDENTITY"
+                        },
+                        {
+                            "0": "ARIZONA BANG"
+                        },
+                        {
+                            "0": "ARMAGEDDON LOST"
+                        },
+                        {
+                            "0": "ARSENIC INDEPENDENCE"
+                        },
+                        {
+                            "0": "ATLANTIS CAUSE"
+                        },
+                        {
+                            "0": "AUTUMN CROW"
+                        },
+                        {
+                            "0": "BAKED CLEOPATRA"
+                        },
+                        {
+                            "0": "BALLROOM MOCKINGBIRD"
+                        },
+                        {
+                            "0": "BARBARELLA STREETCAR"
+                        },
+                        {
+                            "0": "BAREFOOT MANCHURIAN"
+                        },
+                        {
+                            "0": "BEACH HEARTBREAKERS"
+                        },
+                        {
+                            "0": "BEAUTY GREASE"
+                        },
+                        {
+                            "0": "BEDAZZLED MARRIED"
+                        },
+                        {
+                            "0": "BEHAVIOR RUNAWAY"
+                        },
+                        {
+                            "0": "BILL OTHERS"
+                        },
+                        {
+                            "0": "BIRCH ANTITRUST"
+                        },
+                        {
+                            "0": "BIRD INDEPENDENCE"
+                        },
+                        {
+                            "0": "BIRDS PERDITION"
+                        },
+                        {
+                            "0": "BLACKOUT PRIVATE"
+                        },
+                        {
+                            "0": "BLANKET BEVERLY"
+                        },
+                        {
+                            "0": "BLOOD ARGONAUTS"
+                        },
+                        {
+                            "0": "BLUES INSTINCT"
+                        },
+                        {
+                            "0": "BOILED DARES"
+                        },
+                        {
+                            "0": "BONNIE HOLOCAUST"
+                        },
+                        {
+                            "0": "BORN SPINAL"
+                        },
+                        {
+                            "0": "BORROWERS BEDAZZLED"
+                        },
+                        {
+                            "0": "BOUND CHEAPER"
+                        },
+                        {
+                            "0": "BRANNIGAN SUNRISE"
+                        },
+                        {
+                            "0": "BREAKFAST GOLDFINGER"
+                        },
+                        {
+                            "0": "BRIDE INTRIGUE"
+                        },
+                        {
+                            "0": "BRINGING HYSTERICAL"
+                        },
+                        {
+                            "0": "BUCKET BROTHERHOOD"
+                        },
+                        {
+                            "0": "BUGSY SONG"
+                        },
+                        {
+                            "0": "BULWORTH COMMANDMENTS"
+                        },
+                        {
+                            "0": "BUNCH MINDS"
+                        },
+                        {
+                            "0": "BUTTERFLY CHOCOLAT"
+                        },
+                        {
+                            "0": "CAPER MOTIONS"
+                        },
+                        {
+                            "0": "CAROL TEXAS"
+                        },
+                        {
+                            "0": "CARRIE BUNCH"
+                        },
+                        {
+                            "0": "CASABLANCA SUPER"
+                        },
+                        {
+                            "0": "CASUALTIES ENCINO"
+                        },
+                        {
+                            "0": "CAT CONEHEADS"
+                        },
+                        {
+                            "0": "CATCH AMISTAD"
+                        },
+                        {
+                            "0": "CENTER DINOSAUR"
+                        },
+                        {
+                            "0": "CHAINSAW UPTOWN"
+                        },
+                        {
+                            "0": "CHAMPION FLATLINERS"
+                        },
+                        {
+                            "0": "CHARADE DUFFEL"
+                        },
+                        {
+                            "0": "CHASING FIGHT"
+                        },
+                        {
+                            "0": "CHEAPER CLYDE"
+                        },
+                        {
+                            "0": "CHICKEN HELLFIGHTERS"
+                        },
+                        {
+                            "0": "CHILL LUCK"
+                        },
+                        {
+                            "0": "CHINATOWN GLADIATOR"
+                        },
+                        {
+                            "0": "CHISUM BEHAVIOR"
+                        },
+                        {
+                            "0": "CHITTY LOCK"
+                        },
+                        {
+                            "0": "CIDER DESIRE"
+                        },
+                        {
+                            "0": "CITIZEN SHREK"
+                        },
+                        {
+                            "0": "CLASH FREDDY"
+                        },
+                        {
+                            "0": "CLERKS ANGELS"
+                        },
+                        {
+                            "0": "COAST RAINBOW"
+                        },
+                        {
+                            "0": "COLDBLOODED DARLING"
+                        },
+                        {
+                            "0": "COLOR PHILADELPHIA"
+                        },
+                        {
+                            "0": "CONNECTION MICROCOSMOS"
+                        },
+                        {
+                            "0": "CONQUERER NUTS"
+                        },
+                        {
+                            "0": "CONTROL ANTHEM"
+                        },
+                        {
+                            "0": "COWBOY DOOM"
+                        },
+                        {
+                            "0": "CRAZY HOME"
+                        },
+                        {
+                            "0": "CROSSROADS CASUALTIES"
+                        },
+                        {
+                            "0": "CROW GREASE"
+                        },
+                        {
+                            "0": "CRUELTY UNFORGIVEN"
+                        },
+                        {
+                            "0": "CYCLONE FAMILY"
+                        },
+                        {
+                            "0": "DADDY PITTSBURGH"
+                        },
+                        {
+                            "0": "DAISY MENAGERIE"
+                        },
+                        {
+                            "0": "DALMATIONS SWEDEN"
+                        },
+                        {
+                            "0": "DANCING FEVER"
+                        },
+                        {
+                            "0": "DANGEROUS UPTOWN"
+                        },
+                        {
+                            "0": "DARN FORRESTER"
+                        },
+                        {
+                            "0": "DAWN POND"
+                        },
+                        {
+                            "0": "DAY UNFAITHFUL"
+                        },
+                        {
+                            "0": "DAZED PUNK"
+                        },
+                        {
+                            "0": "DESPERATE TRAINSPOTTING"
+                        },
+                        {
+                            "0": "DESTINY SATURDAY"
+                        },
+                        {
+                            "0": "DIARY PANIC"
+                        },
+                        {
+                            "0": "DISCIPLE MOTHER"
+                        },
+                        {
+                            "0": "DIVORCE SHINING"
+                        },
+                        {
+                            "0": "DOCTOR GRAIL"
+                        },
+                        {
+                            "0": "DOGMA FAMILY"
+                        },
+                        {
+                            "0": "DOWNHILL ENOUGH"
+                        },
+                        {
+                            "0": "DRACULA CRYSTAL"
+                        },
+                        {
+                            "0": "DREAM PICKUP"
+                        },
+                        {
+                            "0": "DRUMLINE CYCLONE"
+                        },
+                        {
+                            "0": "DRUMS DYNAMITE"
+                        },
+                        {
+                            "0": "DUDE BLINDNESS"
+                        },
+                        {
+                            "0": "DUFFEL APOCALYPSE"
+                        },
+                        {
+                            "0": "DWARFS ALTER"
+                        },
+                        {
+                            "0": "DYING MAKER"
+                        },
+                        {
+                            "0": "EASY GLADIATOR"
+                        },
+                        {
+                            "0": "EFFECT GLADIATOR"
+                        },
+                        {
+                            "0": "EGG IGBY"
+                        },
+                        {
+                            "0": "EGYPT TENENBAUMS"
+                        },
+                        {
+                            "0": "EMPIRE MALKOVICH"
+                        },
+                        {
+                            "0": "ENCINO ELF"
+                        },
+                        {
+                            "0": "EVE RESURRECTION"
+                        },
+                        {
+                            "0": "EVERYONE CRAFT"
+                        },
+                        {
+                            "0": "EXCITEMENT EVE"
+                        },
+                        {
+                            "0": "EXORCIST STING"
+                        },
+                        {
+                            "0": "EXPENDABLE STALLION"
+                        },
+                        {
+                            "0": "EXTRAORDINARY CONQUERER"
+                        },
+                        {
+                            "0": "FANTASIA PARK"
+                        },
+                        {
+                            "0": "FARGO GANDHI"
+                        },
+                        {
+                            "0": "FATAL HAUNTED"
+                        },
+                        {
+                            "0": "FERRIS MOTHER"
+                        },
+                        {
+                            "0": "FICTION CHRISTMAS"
+                        },
+                        {
+                            "0": "FIDELITY DEVIL"
+                        },
+                        {
+                            "0": "FIREBALL PHILADELPHIA"
+                        },
+                        {
+                            "0": "FIREHOUSE VIETNAM"
+                        },
+                        {
+                            "0": "FLATLINERS KILLER"
+                        },
+                        {
+                            "0": "FOOL MOCKINGBIRD"
+                        },
+                        {
+                            "0": "FRENCH HOLIDAY"
+                        },
+                        {
+                            "0": "FRISCO FORREST"
+                        },
+                        {
+                            "0": "FROST HEAD"
+                        },
+                        {
+                            "0": "FULL FLATLINERS"
+                        },
+                        {
+                            "0": "GABLES METROPOLIS"
+                        },
+                        {
+                            "0": "GARDEN ISLAND"
+                        },
+                        {
+                            "0": "GASLIGHT CRUSADE"
+                        },
+                        {
+                            "0": "GHOST GROUNDHOG"
+                        },
+                        {
+                            "0": "GILBERT PELICAN"
+                        },
+                        {
+                            "0": "GLADIATOR WESTWARD"
+                        },
+                        {
+                            "0": "GLASS DYING"
+                        },
+                        {
+                            "0": "GOLDFINGER SENSIBILITY"
+                        },
+                        {
+                            "0": "GOODFELLAS SALUTE"
+                        },
+                        {
+                            "0": "GOSFORD DONNIE"
+                        },
+                        {
+                            "0": "GRADUATE LORD"
+                        },
+                        {
+                            "0": "GRAFFITI LOVE"
+                        },
+                        {
+                            "0": "GRAPES FURY"
+                        },
+                        {
+                            "0": "GREASE YOUTH"
+                        },
+                        {
+                            "0": "GREEK EVERYONE"
+                        },
+                        {
+                            "0": "GRIT CLOCKWORK"
+                        },
+                        {
+                            "0": "GUN BONNIE"
+                        },
+                        {
+                            "0": "HANGING DEEP"
+                        },
+                        {
+                            "0": "HAPPINESS UNITED"
+                        },
+                        {
+                            "0": "HARPER DYING"
+                        },
+                        {
+                            "0": "HATE HANDICAP"
+                        },
+                        {
+                            "0": "HEARTBREAKERS BRIGHT"
+                        },
+                        {
+                            "0": "HEAVEN FREEDOM"
+                        },
+                        {
+                            "0": "HEAVYWEIGHTS BEAST"
+                        },
+                        {
+                            "0": "HELLFIGHTERS SIERRA"
+                        },
+                        {
+                            "0": "HILLS NEIGHBORS"
+                        },
+                        {
+                            "0": "HOCUS FRIDA"
+                        },
+                        {
+                            "0": "HOLES BRANNIGAN"
+                        },
+                        {
+                            "0": "HOLLYWOOD ANONYMOUS"
+                        },
+                        {
+                            "0": "HOOK CHARIOTS"
+                        },
+                        {
+                            "0": "HOOSIERS BIRDCAGE"
+                        },
+                        {
+                            "0": "HORN WORKING"
+                        },
+                        {
+                            "0": "HUNGER ROOF"
+                        },
+                        {
+                            "0": "HURRICANE AFFAIR"
+                        },
+                        {
+                            "0": "HYDE DOCTOR"
+                        },
+                        {
+                            "0": "HYSTERICAL GRAIL"
+                        },
+                        {
+                            "0": "INSTINCT AIRPORT"
+                        },
+                        {
+                            "0": "INTRIGUE WORST"
+                        },
+                        {
+                            "0": "INVASION CYCLONE"
+                        },
+                        {
+                            "0": "IRON MOON"
+                        },
+                        {
+                            "0": "ITALIAN AFRICAN"
+                        },
+                        {
+                            "0": "JAPANESE RUN"
+                        },
+                        {
+                            "0": "JAWBREAKER BROOKLYN"
+                        },
+                        {
+                            "0": "JAWS HARRY"
+                        },
+                        {
+                            "0": "JEDI BENEATH"
+                        },
+                        {
+                            "0": "JEKYLL FROGMEN"
+                        },
+                        {
+                            "0": "JERSEY SASSY"
+                        },
+                        {
+                            "0": "JUMANJI BLADE"
+                        },
+                        {
+                            "0": "KENTUCKIAN GIANT"
+                        },
+                        {
+                            "0": "KILL BROTHERHOOD"
+                        },
+                        {
+                            "0": "LADY STAGE"
+                        },
+                        {
+                            "0": "LAWLESS VISION"
+                        },
+                        {
+                            "0": "LEGALLY SECRETARY"
+                        },
+                        {
+                            "0": "LEGEND JEDI"
+                        },
+                        {
+                            "0": "LIAISONS SWEET"
+                        },
+                        {
+                            "0": "LIBERTY MAGNIFICENT"
+                        },
+                        {
+                            "0": "LION UNCUT"
+                        },
+                        {
+                            "0": "LOLA AGENT"
+                        },
+                        {
+                            "0": "LONELY ELEPHANT"
+                        },
+                        {
+                            "0": "LOSER HUSTLER"
+                        },
+                        {
+                            "0": "LOVELY JINGLE"
+                        },
+                        {
+                            "0": "LOVER TRUMAN"
+                        },
+                        {
+                            "0": "LUST LOCK"
+                        },
+                        {
+                            "0": "MAGIC MALLRATS"
+                        },
+                        {
+                            "0": "MAIDEN HOME"
+                        },
+                        {
+                            "0": "MAJESTIC FLOATS"
+                        },
+                        {
+                            "0": "MALKOVICH PET"
+                        },
+                        {
+                            "0": "MALLRATS UNITED"
+                        },
+                        {
+                            "0": "MANCHURIAN CURTAIN"
+                        },
+                        {
+                            "0": "MARRIED GO"
+                        },
+                        {
+                            "0": "MASSAGE IMAGE"
+                        },
+                        {
+                            "0": "MEET CHOCOLATE"
+                        },
+                        {
+                            "0": "MENAGERIE RUSHMORE"
+                        },
+                        {
+                            "0": "MIDNIGHT WESTWARD"
+                        },
+                        {
+                            "0": "MIDSUMMER GROUNDHOG"
+                        },
+                        {
+                            "0": "MIGHTY LUCK"
+                        },
+                        {
+                            "0": "MILE MULAN"
+                        },
+                        {
+                            "0": "MINORITY KISS"
+                        },
+                        {
+                            "0": "MOB DUFFEL"
+                        },
+                        {
+                            "0": "MOCKINGBIRD HOLLYWOOD"
+                        },
+                        {
+                            "0": "MODERN DORADO"
+                        },
+                        {
+                            "0": "MONEY HAROLD"
+                        },
+                        {
+                            "0": "MONSOON CAUSE"
+                        },
+                        {
+                            "0": "MONSTER SPARTACUS"
+                        },
+                        {
+                            "0": "MONTEREY LABYRINTH"
+                        },
+                        {
+                            "0": "MOON BUNCH"
+                        },
+                        {
+                            "0": "MOONWALKER FOOL"
+                        },
+                        {
+                            "0": "MOSQUITO ARMAGEDDON"
+                        },
+                        {
+                            "0": "MOTIONS DETAILS"
+                        },
+                        {
+                            "0": "MOURNING PURPLE"
+                        },
+                        {
+                            "0": "MOVIE SHAKESPEARE"
+                        },
+                        {
+                            "0": "MULAN MOON"
+                        },
+                        {
+                            "0": "MULHOLLAND BEAST"
+                        },
+                        {
+                            "0": "MUPPET MILE"
+                        },
+                        {
+                            "0": "MURDER ANTITRUST"
+                        },
+                        {
+                            "0": "MUSCLE BRIGHT"
+                        },
+                        {
+                            "0": "MUSKETEERS WAIT"
+                        },
+                        {
+                            "0": "MUSSOLINI SPOILERS"
+                        },
+                        {
+                            "0": "NECKLACE OUTBREAK"
+                        },
+                        {
+                            "0": "NEWSIES STORY"
+                        },
+                        {
+                            "0": "NEWTON LABYRINTH"
+                        },
+                        {
+                            "0": "NIGHTMARE CHILL"
+                        },
+                        {
+                            "0": "NOON PAPI"
+                        },
+                        {
+                            "0": "NORTHWEST POLISH"
+                        },
+                        {
+                            "0": "NOVOCAINE FLIGHT"
+                        },
+                        {
+                            "0": "OKLAHOMA JUMANJI"
+                        },
+                        {
+                            "0": "OLEANDER CLUE"
+                        },
+                        {
+                            "0": "OPEN AFRICAN"
+                        },
+                        {
+                            "0": "OPERATION OPERATION"
+                        },
+                        {
+                            "0": "OPPOSITE NECKLACE"
+                        },
+                        {
+                            "0": "OSCAR GOLD"
+                        },
+                        {
+                            "0": "OTHERS SOUP"
+                        },
+                        {
+                            "0": "PACIFIC AMISTAD"
+                        },
+                        {
+                            "0": "PANIC CLUB"
+                        },
+                        {
+                            "0": "PANKY SUBMARINE"
+                        },
+                        {
+                            "0": "PAPI NECKLACE"
+                        },
+                        {
+                            "0": "PARTY KNOCK"
+                        },
+                        {
+                            "0": "PATHS CONTROL"
+                        },
+                        {
+                            "0": "PATRIOT ROMAN"
+                        },
+                        {
+                            "0": "PATTON INTERVIEW"
+                        },
+                        {
+                            "0": "PEAK FOREVER"
+                        },
+                        {
+                            "0": "PELICAN COMFORTS"
+                        },
+                        {
+                            "0": "PET HAUNTING"
+                        },
+                        {
+                            "0": "PICKUP DRIVING"
+                        },
+                        {
+                            "0": "PILOT HOOSIERS"
+                        },
+                        {
+                            "0": "PINOCCHIO SIMON"
+                        },
+                        {
+                            "0": "PIRATES ROXANNE"
+                        },
+                        {
+                            "0": "POLISH BROOKLYN"
+                        },
+                        {
+                            "0": "POLLOCK DELIVERANCE"
+                        },
+                        {
+                            "0": "POTLUCK MIXED"
+                        },
+                        {
+                            "0": "POTTER CONNECTICUT"
+                        },
+                        {
+                            "0": "PRESIDENT BANG"
+                        },
+                        {
+                            "0": "PRIMARY GLASS"
+                        },
+                        {
+                            "0": "PRIVATE DROP"
+                        },
+                        {
+                            "0": "PULP BEVERLY"
+                        },
+                        {
+                            "0": "PUNK DIVORCE"
+                        },
+                        {
+                            "0": "QUEEN LUKE"
+                        },
+                        {
+                            "0": "RAINBOW SHOCK"
+                        },
+                        {
+                            "0": "RANGE MOONWALKER"
+                        },
+                        {
+                            "0": "REBEL AIRPORT"
+                        },
+                        {
+                            "0": "RECORDS ZORRO"
+                        },
+                        {
+                            "0": "RESURRECTION SILVERADO"
+                        },
+                        {
+                            "0": "RIDER CADDYSHACK"
+                        },
+                        {
+                            "0": "RINGS HEARTBREAKERS"
+                        },
+                        {
+                            "0": "ROCK INSTINCT"
+                        },
+                        {
+                            "0": "ROOM ROMAN"
+                        },
+                        {
+                            "0": "RUSH GOODFELLAS"
+                        },
+                        {
+                            "0": "SABRINA MIDNIGHT"
+                        },
+                        {
+                            "0": "SAGEBRUSH CLUELESS"
+                        },
+                        {
+                            "0": "SAINTS BRIDE"
+                        },
+                        {
+                            "0": "SAMURAI LION"
+                        },
+                        {
+                            "0": "SANTA PARIS"
+                        },
+                        {
+                            "0": "SASSY PACKER"
+                        },
+                        {
+                            "0": "SATISFACTION CONFIDENTIAL"
+                        },
+                        {
+                            "0": "SATURDAY LAMBS"
+                        },
+                        {
+                            "0": "SCISSORHANDS SLUMS"
+                        },
+                        {
+                            "0": "SEA VIRGIN"
+                        },
+                        {
+                            "0": "SECRET GROUNDHOG"
+                        },
+                        {
+                            "0": "SECRETARY ROUGE"
+                        },
+                        {
+                            "0": "SECRETS PARADISE"
+                        },
+                        {
+                            "0": "SENSIBILITY REAR"
+                        },
+                        {
+                            "0": "SHANE DARKNESS"
+                        },
+                        {
+                            "0": "SHANGHAI TYCOON"
+                        },
+                        {
+                            "0": "SHAWSHANK BUBBLE"
+                        },
+                        {
+                            "0": "SHINING ROSES"
+                        },
+                        {
+                            "0": "SIDE ARK"
+                        },
+                        {
+                            "0": "SILVERADO GOLDFINGER"
+                        },
+                        {
+                            "0": "SKY MIRACLE"
+                        },
+                        {
+                            "0": "SLEEPLESS MONSOON"
+                        },
+                        {
+                            "0": "SLEEPY JAPANESE"
+                        },
+                        {
+                            "0": "SLUMS DUCK"
+                        },
+                        {
+                            "0": "SMILE EARRING"
+                        },
+                        {
+                            "0": "SNATCH SLIPPER"
+                        },
+                        {
+                            "0": "SNOWMAN ROLLERCOASTER"
+                        },
+                        {
+                            "0": "SPIKING ELEMENT"
+                        },
+                        {
+                            "0": "SPLASH GUMP"
+                        },
+                        {
+                            "0": "SPOILERS HELLFIGHTERS"
+                        },
+                        {
+                            "0": "SQUAD FISH"
+                        },
+                        {
+                            "0": "STAGE WORLD"
+                        },
+                        {
+                            "0": "STAR OPERATION"
+                        },
+                        {
+                            "0": "STEERS ARMAGEDDON"
+                        },
+                        {
+                            "0": "STOCK GLASS"
+                        },
+                        {
+                            "0": "STONE FIRE"
+                        },
+                        {
+                            "0": "STRANGER STRANGERS"
+                        },
+                        {
+                            "0": "SUGAR WONKA"
+                        },
+                        {
+                            "0": "SUICIDES SILENCE"
+                        },
+                        {
+                            "0": "SUMMER SCARFACE"
+                        },
+                        {
+                            "0": "SUPER WYOMING"
+                        },
+                        {
+                            "0": "SUPERFLY TRIP"
+                        },
+                        {
+                            "0": "SUSPECTS QUILLS"
+                        },
+                        {
+                            "0": "SWEDEN SHINING"
+                        },
+                        {
+                            "0": "SWEETHEARTS SUSPECTS"
+                        },
+                        {
+                            "0": "TADPOLE PARK"
+                        },
+                        {
+                            "0": "TALENTED HOMICIDE"
+                        },
+                        {
+                            "0": "TEEN APOLLO"
+                        },
+                        {
+                            "0": "TELEGRAPH VOYAGE"
+                        },
+                        {
+                            "0": "TEMPLE ATTRACTION"
+                        },
+                        {
+                            "0": "TEQUILA PAST"
+                        },
+                        {
+                            "0": "TIMBERLAND SKY"
+                        },
+                        {
+                            "0": "TITANS JERK"
+                        },
+                        {
+                            "0": "TOMATOES HELLFIGHTERS"
+                        },
+                        {
+                            "0": "TOOTSIE PILOT"
+                        },
+                        {
+                            "0": "TORQUE BOUND"
+                        },
+                        {
+                            "0": "TRACY CIDER"
+                        },
+                        {
+                            "0": "TRADING PINOCCHIO"
+                        },
+                        {
+                            "0": "TRAFFIC HOBBIT"
+                        },
+                        {
+                            "0": "TRAMP OTHERS"
+                        },
+                        {
+                            "0": "TRAP GUYS"
+                        },
+                        {
+                            "0": "TREATMENT JEKYLL"
+                        },
+                        {
+                            "0": "TROJAN TOMORROW"
+                        },
+                        {
+                            "0": "TROUBLE DATE"
+                        },
+                        {
+                            "0": "TRUMAN CRAZY"
+                        },
+                        {
+                            "0": "TURN STAR"
+                        },
+                        {
+                            "0": "TWISTED PIRATES"
+                        },
+                        {
+                            "0": "TYCOON GATHERING"
+                        },
+                        {
+                            "0": "UNBREAKABLE KARATE"
+                        },
+                        {
+                            "0": "UNFORGIVEN ZOOLANDER"
+                        },
+                        {
+                            "0": "UPTOWN YOUNG"
+                        },
+                        {
+                            "0": "VALLEY PACKER"
+                        },
+                        {
+                            "0": "VOLUME HOUSE"
+                        },
+                        {
+                            "0": "WAGON JAWS"
+                        },
+                        {
+                            "0": "WAKE JAWS"
+                        },
+                        {
+                            "0": "WALLS ARTIST"
+                        },
+                        {
+                            "0": "WAR NOTTING"
+                        },
+                        {
+                            "0": "WARDROBE PHANTOM"
+                        },
+                        {
+                            "0": "WARLOCK WEREWOLF"
+                        },
+                        {
+                            "0": "WARS PLUTO"
+                        },
+                        {
+                            "0": "WASTELAND DIVINE"
+                        },
+                        {
+                            "0": "WATCH TRACY"
+                        },
+                        {
+                            "0": "WATERFRONT DELIVERANCE"
+                        },
+                        {
+                            "0": "WATERSHIP FRONTIER"
+                        },
+                        {
+                            "0": "WEDDING APOLLO"
+                        },
+                        {
+                            "0": "WEREWOLF LOLA"
+                        },
+                        {
+                            "0": "WEST LION"
+                        },
+                        {
+                            "0": "WIZARD COLDBLOODED"
+                        },
+                        {
+                            "0": "WON DARES"
+                        },
+                        {
+                            "0": "WONDERLAND CHRISTMAS"
+                        },
+                        {
+                            "0": "WORDS HUNTER"
+                        },
+                        {
+                            "0": "WORST BANGER"
+                        },
+                        {
+                            "0": "YOUNG LANGUAGE"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "title",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 372 records retrieved in 3ms"
+                    },
+                    "totalRowCount": 372,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select title from film where rating = 'G' or rating = 'PG'"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 29,
+                "end": 32,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "bb0d0601-c343-4fbb-a66e-3cf66bbb9131"
+                    ]
+                },
+                "currentHeight": 351.984375,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 120
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "a4410002-8c3b-4d3a-920e-cf814d838231",
+                    "resultId": "bb0d0601-c343-4fbb-a66e-3cf66bbb9131",
+                    "rows": [
+                        {
+                            "0": "ACADEMY DINOSAUR"
+                        },
+                        {
+                            "0": "ACE GOLDFINGER"
+                        },
+                        {
+                            "0": "AFFAIR PREJUDICE"
+                        },
+                        {
+                            "0": "AFRICAN EGG"
+                        },
+                        {
+                            "0": "AGENT TRUMAN"
+                        },
+                        {
+                            "0": "ALAMO VIDEOTAPE"
+                        },
+                        {
+                            "0": "ALASKA PHANTOM"
+                        },
+                        {
+                            "0": "ALI FOREVER"
+                        },
+                        {
+                            "0": "AMADEUS HOLY"
+                        },
+                        {
+                            "0": "AMISTAD MIDSUMMER"
+                        },
+                        {
+                            "0": "ANGELS LIFE"
+                        },
+                        {
+                            "0": "ANNIE IDENTITY"
+                        },
+                        {
+                            "0": "ARIZONA BANG"
+                        },
+                        {
+                            "0": "ARMAGEDDON LOST"
+                        },
+                        {
+                            "0": "ARSENIC INDEPENDENCE"
+                        },
+                        {
+                            "0": "ATLANTIS CAUSE"
+                        },
+                        {
+                            "0": "AUTUMN CROW"
+                        },
+                        {
+                            "0": "BAKED CLEOPATRA"
+                        },
+                        {
+                            "0": "BALLROOM MOCKINGBIRD"
+                        },
+                        {
+                            "0": "BARBARELLA STREETCAR"
+                        },
+                        {
+                            "0": "BAREFOOT MANCHURIAN"
+                        },
+                        {
+                            "0": "BEACH HEARTBREAKERS"
+                        },
+                        {
+                            "0": "BEAUTY GREASE"
+                        },
+                        {
+                            "0": "BEDAZZLED MARRIED"
+                        },
+                        {
+                            "0": "BEHAVIOR RUNAWAY"
+                        },
+                        {
+                            "0": "BILL OTHERS"
+                        },
+                        {
+                            "0": "BIRCH ANTITRUST"
+                        },
+                        {
+                            "0": "BIRD INDEPENDENCE"
+                        },
+                        {
+                            "0": "BIRDS PERDITION"
+                        },
+                        {
+                            "0": "BLACKOUT PRIVATE"
+                        },
+                        {
+                            "0": "BLANKET BEVERLY"
+                        },
+                        {
+                            "0": "BLOOD ARGONAUTS"
+                        },
+                        {
+                            "0": "BLUES INSTINCT"
+                        },
+                        {
+                            "0": "BOILED DARES"
+                        },
+                        {
+                            "0": "BONNIE HOLOCAUST"
+                        },
+                        {
+                            "0": "BORN SPINAL"
+                        },
+                        {
+                            "0": "BORROWERS BEDAZZLED"
+                        },
+                        {
+                            "0": "BOUND CHEAPER"
+                        },
+                        {
+                            "0": "BRANNIGAN SUNRISE"
+                        },
+                        {
+                            "0": "BREAKFAST GOLDFINGER"
+                        },
+                        {
+                            "0": "BRIDE INTRIGUE"
+                        },
+                        {
+                            "0": "BRINGING HYSTERICAL"
+                        },
+                        {
+                            "0": "BUCKET BROTHERHOOD"
+                        },
+                        {
+                            "0": "BUGSY SONG"
+                        },
+                        {
+                            "0": "BULWORTH COMMANDMENTS"
+                        },
+                        {
+                            "0": "BUNCH MINDS"
+                        },
+                        {
+                            "0": "BUTTERFLY CHOCOLAT"
+                        },
+                        {
+                            "0": "CAPER MOTIONS"
+                        },
+                        {
+                            "0": "CAROL TEXAS"
+                        },
+                        {
+                            "0": "CARRIE BUNCH"
+                        },
+                        {
+                            "0": "CASABLANCA SUPER"
+                        },
+                        {
+                            "0": "CASUALTIES ENCINO"
+                        },
+                        {
+                            "0": "CAT CONEHEADS"
+                        },
+                        {
+                            "0": "CATCH AMISTAD"
+                        },
+                        {
+                            "0": "CENTER DINOSAUR"
+                        },
+                        {
+                            "0": "CHAINSAW UPTOWN"
+                        },
+                        {
+                            "0": "CHAMPION FLATLINERS"
+                        },
+                        {
+                            "0": "CHARADE DUFFEL"
+                        },
+                        {
+                            "0": "CHASING FIGHT"
+                        },
+                        {
+                            "0": "CHEAPER CLYDE"
+                        },
+                        {
+                            "0": "CHICKEN HELLFIGHTERS"
+                        },
+                        {
+                            "0": "CHILL LUCK"
+                        },
+                        {
+                            "0": "CHINATOWN GLADIATOR"
+                        },
+                        {
+                            "0": "CHISUM BEHAVIOR"
+                        },
+                        {
+                            "0": "CHITTY LOCK"
+                        },
+                        {
+                            "0": "CIDER DESIRE"
+                        },
+                        {
+                            "0": "CITIZEN SHREK"
+                        },
+                        {
+                            "0": "CLASH FREDDY"
+                        },
+                        {
+                            "0": "CLERKS ANGELS"
+                        },
+                        {
+                            "0": "COAST RAINBOW"
+                        },
+                        {
+                            "0": "COLDBLOODED DARLING"
+                        },
+                        {
+                            "0": "COLOR PHILADELPHIA"
+                        },
+                        {
+                            "0": "CONNECTION MICROCOSMOS"
+                        },
+                        {
+                            "0": "CONQUERER NUTS"
+                        },
+                        {
+                            "0": "CONTROL ANTHEM"
+                        },
+                        {
+                            "0": "COWBOY DOOM"
+                        },
+                        {
+                            "0": "CRAZY HOME"
+                        },
+                        {
+                            "0": "CROSSROADS CASUALTIES"
+                        },
+                        {
+                            "0": "CROW GREASE"
+                        },
+                        {
+                            "0": "CRUELTY UNFORGIVEN"
+                        },
+                        {
+                            "0": "CYCLONE FAMILY"
+                        },
+                        {
+                            "0": "DADDY PITTSBURGH"
+                        },
+                        {
+                            "0": "DAISY MENAGERIE"
+                        },
+                        {
+                            "0": "DALMATIONS SWEDEN"
+                        },
+                        {
+                            "0": "DANCING FEVER"
+                        },
+                        {
+                            "0": "DANGEROUS UPTOWN"
+                        },
+                        {
+                            "0": "DARN FORRESTER"
+                        },
+                        {
+                            "0": "DAWN POND"
+                        },
+                        {
+                            "0": "DAY UNFAITHFUL"
+                        },
+                        {
+                            "0": "DAZED PUNK"
+                        },
+                        {
+                            "0": "DESPERATE TRAINSPOTTING"
+                        },
+                        {
+                            "0": "DESTINY SATURDAY"
+                        },
+                        {
+                            "0": "DIARY PANIC"
+                        },
+                        {
+                            "0": "DISCIPLE MOTHER"
+                        },
+                        {
+                            "0": "DIVORCE SHINING"
+                        },
+                        {
+                            "0": "DOCTOR GRAIL"
+                        },
+                        {
+                            "0": "DOGMA FAMILY"
+                        },
+                        {
+                            "0": "DOWNHILL ENOUGH"
+                        },
+                        {
+                            "0": "DRACULA CRYSTAL"
+                        },
+                        {
+                            "0": "DREAM PICKUP"
+                        },
+                        {
+                            "0": "DRUMLINE CYCLONE"
+                        },
+                        {
+                            "0": "DRUMS DYNAMITE"
+                        },
+                        {
+                            "0": "DUDE BLINDNESS"
+                        },
+                        {
+                            "0": "DUFFEL APOCALYPSE"
+                        },
+                        {
+                            "0": "DWARFS ALTER"
+                        },
+                        {
+                            "0": "DYING MAKER"
+                        },
+                        {
+                            "0": "EASY GLADIATOR"
+                        },
+                        {
+                            "0": "EFFECT GLADIATOR"
+                        },
+                        {
+                            "0": "EGG IGBY"
+                        },
+                        {
+                            "0": "EGYPT TENENBAUMS"
+                        },
+                        {
+                            "0": "EMPIRE MALKOVICH"
+                        },
+                        {
+                            "0": "ENCINO ELF"
+                        },
+                        {
+                            "0": "EVE RESURRECTION"
+                        },
+                        {
+                            "0": "EVERYONE CRAFT"
+                        },
+                        {
+                            "0": "EXCITEMENT EVE"
+                        },
+                        {
+                            "0": "EXORCIST STING"
+                        },
+                        {
+                            "0": "EXPENDABLE STALLION"
+                        },
+                        {
+                            "0": "EXTRAORDINARY CONQUERER"
+                        },
+                        {
+                            "0": "FANTASIA PARK"
+                        },
+                        {
+                            "0": "FARGO GANDHI"
+                        },
+                        {
+                            "0": "FATAL HAUNTED"
+                        },
+                        {
+                            "0": "FERRIS MOTHER"
+                        },
+                        {
+                            "0": "FICTION CHRISTMAS"
+                        },
+                        {
+                            "0": "FIDELITY DEVIL"
+                        },
+                        {
+                            "0": "FIREBALL PHILADELPHIA"
+                        },
+                        {
+                            "0": "FIREHOUSE VIETNAM"
+                        },
+                        {
+                            "0": "FLATLINERS KILLER"
+                        },
+                        {
+                            "0": "FOOL MOCKINGBIRD"
+                        },
+                        {
+                            "0": "FRENCH HOLIDAY"
+                        },
+                        {
+                            "0": "FRISCO FORREST"
+                        },
+                        {
+                            "0": "FROST HEAD"
+                        },
+                        {
+                            "0": "FULL FLATLINERS"
+                        },
+                        {
+                            "0": "GABLES METROPOLIS"
+                        },
+                        {
+                            "0": "GARDEN ISLAND"
+                        },
+                        {
+                            "0": "GASLIGHT CRUSADE"
+                        },
+                        {
+                            "0": "GHOST GROUNDHOG"
+                        },
+                        {
+                            "0": "GILBERT PELICAN"
+                        },
+                        {
+                            "0": "GLADIATOR WESTWARD"
+                        },
+                        {
+                            "0": "GLASS DYING"
+                        },
+                        {
+                            "0": "GOLDFINGER SENSIBILITY"
+                        },
+                        {
+                            "0": "GOODFELLAS SALUTE"
+                        },
+                        {
+                            "0": "GOSFORD DONNIE"
+                        },
+                        {
+                            "0": "GRADUATE LORD"
+                        },
+                        {
+                            "0": "GRAFFITI LOVE"
+                        },
+                        {
+                            "0": "GRAPES FURY"
+                        },
+                        {
+                            "0": "GREASE YOUTH"
+                        },
+                        {
+                            "0": "GREEK EVERYONE"
+                        },
+                        {
+                            "0": "GRIT CLOCKWORK"
+                        },
+                        {
+                            "0": "GUN BONNIE"
+                        },
+                        {
+                            "0": "HANGING DEEP"
+                        },
+                        {
+                            "0": "HAPPINESS UNITED"
+                        },
+                        {
+                            "0": "HARPER DYING"
+                        },
+                        {
+                            "0": "HATE HANDICAP"
+                        },
+                        {
+                            "0": "HEARTBREAKERS BRIGHT"
+                        },
+                        {
+                            "0": "HEAVEN FREEDOM"
+                        },
+                        {
+                            "0": "HEAVYWEIGHTS BEAST"
+                        },
+                        {
+                            "0": "HELLFIGHTERS SIERRA"
+                        },
+                        {
+                            "0": "HILLS NEIGHBORS"
+                        },
+                        {
+                            "0": "HOCUS FRIDA"
+                        },
+                        {
+                            "0": "HOLES BRANNIGAN"
+                        },
+                        {
+                            "0": "HOLLYWOOD ANONYMOUS"
+                        },
+                        {
+                            "0": "HOOK CHARIOTS"
+                        },
+                        {
+                            "0": "HOOSIERS BIRDCAGE"
+                        },
+                        {
+                            "0": "HORN WORKING"
+                        },
+                        {
+                            "0": "HUNGER ROOF"
+                        },
+                        {
+                            "0": "HURRICANE AFFAIR"
+                        },
+                        {
+                            "0": "HYDE DOCTOR"
+                        },
+                        {
+                            "0": "HYSTERICAL GRAIL"
+                        },
+                        {
+                            "0": "INSTINCT AIRPORT"
+                        },
+                        {
+                            "0": "INTRIGUE WORST"
+                        },
+                        {
+                            "0": "INVASION CYCLONE"
+                        },
+                        {
+                            "0": "IRON MOON"
+                        },
+                        {
+                            "0": "ITALIAN AFRICAN"
+                        },
+                        {
+                            "0": "JAPANESE RUN"
+                        },
+                        {
+                            "0": "JAWBREAKER BROOKLYN"
+                        },
+                        {
+                            "0": "JAWS HARRY"
+                        },
+                        {
+                            "0": "JEDI BENEATH"
+                        },
+                        {
+                            "0": "JEKYLL FROGMEN"
+                        },
+                        {
+                            "0": "JERSEY SASSY"
+                        },
+                        {
+                            "0": "JUMANJI BLADE"
+                        },
+                        {
+                            "0": "KENTUCKIAN GIANT"
+                        },
+                        {
+                            "0": "KILL BROTHERHOOD"
+                        },
+                        {
+                            "0": "LADY STAGE"
+                        },
+                        {
+                            "0": "LAWLESS VISION"
+                        },
+                        {
+                            "0": "LEGALLY SECRETARY"
+                        },
+                        {
+                            "0": "LEGEND JEDI"
+                        },
+                        {
+                            "0": "LIAISONS SWEET"
+                        },
+                        {
+                            "0": "LIBERTY MAGNIFICENT"
+                        },
+                        {
+                            "0": "LION UNCUT"
+                        },
+                        {
+                            "0": "LOLA AGENT"
+                        },
+                        {
+                            "0": "LONELY ELEPHANT"
+                        },
+                        {
+                            "0": "LOSER HUSTLER"
+                        },
+                        {
+                            "0": "LOVELY JINGLE"
+                        },
+                        {
+                            "0": "LOVER TRUMAN"
+                        },
+                        {
+                            "0": "LUST LOCK"
+                        },
+                        {
+                            "0": "MAGIC MALLRATS"
+                        },
+                        {
+                            "0": "MAIDEN HOME"
+                        },
+                        {
+                            "0": "MAJESTIC FLOATS"
+                        },
+                        {
+                            "0": "MALKOVICH PET"
+                        },
+                        {
+                            "0": "MALLRATS UNITED"
+                        },
+                        {
+                            "0": "MANCHURIAN CURTAIN"
+                        },
+                        {
+                            "0": "MARRIED GO"
+                        },
+                        {
+                            "0": "MASSAGE IMAGE"
+                        },
+                        {
+                            "0": "MEET CHOCOLATE"
+                        },
+                        {
+                            "0": "MENAGERIE RUSHMORE"
+                        },
+                        {
+                            "0": "MIDNIGHT WESTWARD"
+                        },
+                        {
+                            "0": "MIDSUMMER GROUNDHOG"
+                        },
+                        {
+                            "0": "MIGHTY LUCK"
+                        },
+                        {
+                            "0": "MILE MULAN"
+                        },
+                        {
+                            "0": "MINORITY KISS"
+                        },
+                        {
+                            "0": "MOB DUFFEL"
+                        },
+                        {
+                            "0": "MOCKINGBIRD HOLLYWOOD"
+                        },
+                        {
+                            "0": "MODERN DORADO"
+                        },
+                        {
+                            "0": "MONEY HAROLD"
+                        },
+                        {
+                            "0": "MONSOON CAUSE"
+                        },
+                        {
+                            "0": "MONSTER SPARTACUS"
+                        },
+                        {
+                            "0": "MONTEREY LABYRINTH"
+                        },
+                        {
+                            "0": "MOON BUNCH"
+                        },
+                        {
+                            "0": "MOONWALKER FOOL"
+                        },
+                        {
+                            "0": "MOSQUITO ARMAGEDDON"
+                        },
+                        {
+                            "0": "MOTIONS DETAILS"
+                        },
+                        {
+                            "0": "MOURNING PURPLE"
+                        },
+                        {
+                            "0": "MOVIE SHAKESPEARE"
+                        },
+                        {
+                            "0": "MULAN MOON"
+                        },
+                        {
+                            "0": "MULHOLLAND BEAST"
+                        },
+                        {
+                            "0": "MUPPET MILE"
+                        },
+                        {
+                            "0": "MURDER ANTITRUST"
+                        },
+                        {
+                            "0": "MUSCLE BRIGHT"
+                        },
+                        {
+                            "0": "MUSKETEERS WAIT"
+                        },
+                        {
+                            "0": "MUSSOLINI SPOILERS"
+                        },
+                        {
+                            "0": "NECKLACE OUTBREAK"
+                        },
+                        {
+                            "0": "NEWSIES STORY"
+                        },
+                        {
+                            "0": "NEWTON LABYRINTH"
+                        },
+                        {
+                            "0": "NIGHTMARE CHILL"
+                        },
+                        {
+                            "0": "NOON PAPI"
+                        },
+                        {
+                            "0": "NORTHWEST POLISH"
+                        },
+                        {
+                            "0": "NOVOCAINE FLIGHT"
+                        },
+                        {
+                            "0": "OKLAHOMA JUMANJI"
+                        },
+                        {
+                            "0": "OLEANDER CLUE"
+                        },
+                        {
+                            "0": "OPEN AFRICAN"
+                        },
+                        {
+                            "0": "OPERATION OPERATION"
+                        },
+                        {
+                            "0": "OPPOSITE NECKLACE"
+                        },
+                        {
+                            "0": "OSCAR GOLD"
+                        },
+                        {
+                            "0": "OTHERS SOUP"
+                        },
+                        {
+                            "0": "PACIFIC AMISTAD"
+                        },
+                        {
+                            "0": "PANIC CLUB"
+                        },
+                        {
+                            "0": "PANKY SUBMARINE"
+                        },
+                        {
+                            "0": "PAPI NECKLACE"
+                        },
+                        {
+                            "0": "PARTY KNOCK"
+                        },
+                        {
+                            "0": "PATHS CONTROL"
+                        },
+                        {
+                            "0": "PATRIOT ROMAN"
+                        },
+                        {
+                            "0": "PATTON INTERVIEW"
+                        },
+                        {
+                            "0": "PEAK FOREVER"
+                        },
+                        {
+                            "0": "PELICAN COMFORTS"
+                        },
+                        {
+                            "0": "PET HAUNTING"
+                        },
+                        {
+                            "0": "PICKUP DRIVING"
+                        },
+                        {
+                            "0": "PILOT HOOSIERS"
+                        },
+                        {
+                            "0": "PINOCCHIO SIMON"
+                        },
+                        {
+                            "0": "PIRATES ROXANNE"
+                        },
+                        {
+                            "0": "POLISH BROOKLYN"
+                        },
+                        {
+                            "0": "POLLOCK DELIVERANCE"
+                        },
+                        {
+                            "0": "POTLUCK MIXED"
+                        },
+                        {
+                            "0": "POTTER CONNECTICUT"
+                        },
+                        {
+                            "0": "PRESIDENT BANG"
+                        },
+                        {
+                            "0": "PRIMARY GLASS"
+                        },
+                        {
+                            "0": "PRIVATE DROP"
+                        },
+                        {
+                            "0": "PULP BEVERLY"
+                        },
+                        {
+                            "0": "PUNK DIVORCE"
+                        },
+                        {
+                            "0": "QUEEN LUKE"
+                        },
+                        {
+                            "0": "RAINBOW SHOCK"
+                        },
+                        {
+                            "0": "RANGE MOONWALKER"
+                        },
+                        {
+                            "0": "REBEL AIRPORT"
+                        },
+                        {
+                            "0": "RECORDS ZORRO"
+                        },
+                        {
+                            "0": "RESURRECTION SILVERADO"
+                        },
+                        {
+                            "0": "RIDER CADDYSHACK"
+                        },
+                        {
+                            "0": "RINGS HEARTBREAKERS"
+                        },
+                        {
+                            "0": "ROCK INSTINCT"
+                        },
+                        {
+                            "0": "ROOM ROMAN"
+                        },
+                        {
+                            "0": "RUSH GOODFELLAS"
+                        },
+                        {
+                            "0": "SABRINA MIDNIGHT"
+                        },
+                        {
+                            "0": "SAGEBRUSH CLUELESS"
+                        },
+                        {
+                            "0": "SAINTS BRIDE"
+                        },
+                        {
+                            "0": "SAMURAI LION"
+                        },
+                        {
+                            "0": "SANTA PARIS"
+                        },
+                        {
+                            "0": "SASSY PACKER"
+                        },
+                        {
+                            "0": "SATISFACTION CONFIDENTIAL"
+                        },
+                        {
+                            "0": "SATURDAY LAMBS"
+                        },
+                        {
+                            "0": "SCISSORHANDS SLUMS"
+                        },
+                        {
+                            "0": "SEA VIRGIN"
+                        },
+                        {
+                            "0": "SECRET GROUNDHOG"
+                        },
+                        {
+                            "0": "SECRETARY ROUGE"
+                        },
+                        {
+                            "0": "SECRETS PARADISE"
+                        },
+                        {
+                            "0": "SENSIBILITY REAR"
+                        },
+                        {
+                            "0": "SHANE DARKNESS"
+                        },
+                        {
+                            "0": "SHANGHAI TYCOON"
+                        },
+                        {
+                            "0": "SHAWSHANK BUBBLE"
+                        },
+                        {
+                            "0": "SHINING ROSES"
+                        },
+                        {
+                            "0": "SIDE ARK"
+                        },
+                        {
+                            "0": "SILVERADO GOLDFINGER"
+                        },
+                        {
+                            "0": "SKY MIRACLE"
+                        },
+                        {
+                            "0": "SLEEPLESS MONSOON"
+                        },
+                        {
+                            "0": "SLEEPY JAPANESE"
+                        },
+                        {
+                            "0": "SLUMS DUCK"
+                        },
+                        {
+                            "0": "SMILE EARRING"
+                        },
+                        {
+                            "0": "SNATCH SLIPPER"
+                        },
+                        {
+                            "0": "SNOWMAN ROLLERCOASTER"
+                        },
+                        {
+                            "0": "SPIKING ELEMENT"
+                        },
+                        {
+                            "0": "SPLASH GUMP"
+                        },
+                        {
+                            "0": "SPOILERS HELLFIGHTERS"
+                        },
+                        {
+                            "0": "SQUAD FISH"
+                        },
+                        {
+                            "0": "STAGE WORLD"
+                        },
+                        {
+                            "0": "STAR OPERATION"
+                        },
+                        {
+                            "0": "STEERS ARMAGEDDON"
+                        },
+                        {
+                            "0": "STOCK GLASS"
+                        },
+                        {
+                            "0": "STONE FIRE"
+                        },
+                        {
+                            "0": "STRANGER STRANGERS"
+                        },
+                        {
+                            "0": "SUGAR WONKA"
+                        },
+                        {
+                            "0": "SUICIDES SILENCE"
+                        },
+                        {
+                            "0": "SUMMER SCARFACE"
+                        },
+                        {
+                            "0": "SUPER WYOMING"
+                        },
+                        {
+                            "0": "SUPERFLY TRIP"
+                        },
+                        {
+                            "0": "SUSPECTS QUILLS"
+                        },
+                        {
+                            "0": "SWEDEN SHINING"
+                        },
+                        {
+                            "0": "SWEETHEARTS SUSPECTS"
+                        },
+                        {
+                            "0": "TADPOLE PARK"
+                        },
+                        {
+                            "0": "TALENTED HOMICIDE"
+                        },
+                        {
+                            "0": "TEEN APOLLO"
+                        },
+                        {
+                            "0": "TELEGRAPH VOYAGE"
+                        },
+                        {
+                            "0": "TEMPLE ATTRACTION"
+                        },
+                        {
+                            "0": "TEQUILA PAST"
+                        },
+                        {
+                            "0": "TIMBERLAND SKY"
+                        },
+                        {
+                            "0": "TITANS JERK"
+                        },
+                        {
+                            "0": "TOMATOES HELLFIGHTERS"
+                        },
+                        {
+                            "0": "TOOTSIE PILOT"
+                        },
+                        {
+                            "0": "TORQUE BOUND"
+                        },
+                        {
+                            "0": "TRACY CIDER"
+                        },
+                        {
+                            "0": "TRADING PINOCCHIO"
+                        },
+                        {
+                            "0": "TRAFFIC HOBBIT"
+                        },
+                        {
+                            "0": "TRAMP OTHERS"
+                        },
+                        {
+                            "0": "TRAP GUYS"
+                        },
+                        {
+                            "0": "TREATMENT JEKYLL"
+                        },
+                        {
+                            "0": "TROJAN TOMORROW"
+                        },
+                        {
+                            "0": "TROUBLE DATE"
+                        },
+                        {
+                            "0": "TRUMAN CRAZY"
+                        },
+                        {
+                            "0": "TURN STAR"
+                        },
+                        {
+                            "0": "TWISTED PIRATES"
+                        },
+                        {
+                            "0": "TYCOON GATHERING"
+                        },
+                        {
+                            "0": "UNBREAKABLE KARATE"
+                        },
+                        {
+                            "0": "UNFORGIVEN ZOOLANDER"
+                        },
+                        {
+                            "0": "UPTOWN YOUNG"
+                        },
+                        {
+                            "0": "VALLEY PACKER"
+                        },
+                        {
+                            "0": "VOLUME HOUSE"
+                        },
+                        {
+                            "0": "WAGON JAWS"
+                        },
+                        {
+                            "0": "WAKE JAWS"
+                        },
+                        {
+                            "0": "WALLS ARTIST"
+                        },
+                        {
+                            "0": "WAR NOTTING"
+                        },
+                        {
+                            "0": "WARDROBE PHANTOM"
+                        },
+                        {
+                            "0": "WARLOCK WEREWOLF"
+                        },
+                        {
+                            "0": "WARS PLUTO"
+                        },
+                        {
+                            "0": "WASTELAND DIVINE"
+                        },
+                        {
+                            "0": "WATCH TRACY"
+                        },
+                        {
+                            "0": "WATERFRONT DELIVERANCE"
+                        },
+                        {
+                            "0": "WATERSHIP FRONTIER"
+                        },
+                        {
+                            "0": "WEDDING APOLLO"
+                        },
+                        {
+                            "0": "WEREWOLF LOLA"
+                        },
+                        {
+                            "0": "WEST LION"
+                        },
+                        {
+                            "0": "WIZARD COLDBLOODED"
+                        },
+                        {
+                            "0": "WON DARES"
+                        },
+                        {
+                            "0": "WONDERLAND CHRISTMAS"
+                        },
+                        {
+                            "0": "WORDS HUNTER"
+                        },
+                        {
+                            "0": "WORST BANGER"
+                        },
+                        {
+                            "0": "YOUNG LANGUAGE"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "title",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 372 records retrieved in 3.01ms"
+                    },
+                    "totalRowCount": 372,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select title from film \nwhere \n    (rating = 'G' or rating = 'PG') AND\n    (release_year = 2006 or release_year = 2007)"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 33,
+                "end": 33,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "90490c81-2fda-4040-d568-11c6d582a362",
+                            "content": "OK, 0 records retrieved in 1.002ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 6
+                        },
+                        "contentStart": 0,
+                        "state": 1
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 34,
+                "end": 34,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "b25620c5-5ee1-4724-d7fb-4746c4d50d18"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 50
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "a4410002-8c3b-4d3a-920e-cf814d838231",
+                    "resultId": "b25620c5-5ee1-4724-d7fb-4746c4d50d18",
+                    "rows": [
+                        {
+                            "0": "PG",
+                            "1": 194
+                        },
+                        {
+                            "0": "G",
+                            "1": 178
+                        },
+                        {
+                            "0": "NC-17",
+                            "1": 210
+                        },
+                        {
+                            "0": "PG-13",
+                            "1": 223
+                        },
+                        {
+                            "0": "R",
+                            "1": 195
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "rating",
+                            "field": "0",
+                            "dataType": {
+                                "type": 46
+                            }
+                        },
+                        {
+                            "title": "count(*)",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 5 records retrieved in 4.997ms"
+                    },
+                    "totalRowCount": 5,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select rating, count(*) from film GROUP by rating"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 35,
+                "end": 35,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "b17817d5-96a0-405e-b2ec-f96e196f9bad"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 68
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "a4410002-8c3b-4d3a-920e-cf814d838231",
+                    "resultId": "b17817d5-96a0-405e-b2ec-f96e196f9bad",
+                    "rows": [
+                        {
+                            "0": "PG",
+                            "1": 194,
+                            "2": "3.051856"
+                        },
+                        {
+                            "0": "G",
+                            "1": 178,
+                            "2": "2.888876"
+                        },
+                        {
+                            "0": "NC-17",
+                            "1": 210,
+                            "2": "2.970952"
+                        },
+                        {
+                            "0": "PG-13",
+                            "1": 223,
+                            "2": "3.034843"
+                        },
+                        {
+                            "0": "R",
+                            "1": 195,
+                            "2": "2.938718"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "rating",
+                            "field": "0",
+                            "dataType": {
+                                "type": 46
+                            }
+                        },
+                        {
+                            "title": "count(*)",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "avg(rental_rate)",
+                            "field": "2",
+                            "dataType": {
+                                "type": 10
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 5 records retrieved in 6.992ms"
+                    },
+                    "totalRowCount": 5,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select rating, count(*), avg(rental_rate) from film GROUP by rating"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 36,
+                "end": 39,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "bba5bb88-0dff-4caf-937f-9852a4b8c32f"
+                    ]
+                },
+                "currentHeight": 181.09375,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 96
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "a4410002-8c3b-4d3a-920e-cf814d838231",
+                    "resultId": "bba5bb88-0dff-4caf-937f-9852a4b8c32f",
+                    "rows": [
+                        {
+                            "0": "G",
+                            "1": 178,
+                            "2": "2.888876"
+                        },
+                        {
+                            "0": "R",
+                            "1": 195,
+                            "2": "2.938718"
+                        },
+                        {
+                            "0": "NC-17",
+                            "1": 210,
+                            "2": "2.970952"
+                        },
+                        {
+                            "0": "PG-13",
+                            "1": 223,
+                            "2": "3.034843"
+                        },
+                        {
+                            "0": "PG",
+                            "1": 194,
+                            "2": "3.051856"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "rating",
+                            "field": "0",
+                            "dataType": {
+                                "type": 46
+                            }
+                        },
+                        {
+                            "title": "count(*)",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "avg(rental_rate)",
+                            "field": "2",
+                            "dataType": {
+                                "type": 10
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 5 records retrieved in 4.988ms"
+                    },
+                    "totalRowCount": 5,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select rating, count(*), avg(rental_rate) \nfrom film \ngroup by rating\norder by avg(rental_rate)"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 40,
+                "end": 46,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "df0869f6-b603-4a37-c0d9-be0fdffd3c57"
+                    ]
+                },
+                "currentHeight": 181.09375,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 138
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 138,
+                            "length": 1
+                        },
+                        "contentStart": 137,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "a4410002-8c3b-4d3a-920e-cf814d838231",
+                    "resultId": "df0869f6-b603-4a37-c0d9-be0fdffd3c57",
+                    "rows": [
+                        {
+                            "0": "G",
+                            "1": 178,
+                            "2": "2.888876"
+                        },
+                        {
+                            "0": "R",
+                            "1": 195,
+                            "2": "2.938718"
+                        },
+                        {
+                            "0": "NC-17",
+                            "1": 210,
+                            "2": "2.970952"
+                        },
+                        {
+                            "0": "PG-13",
+                            "1": 223,
+                            "2": "3.034843"
+                        },
+                        {
+                            "0": "PG",
+                            "1": 194,
+                            "2": "3.051856"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "rating",
+                            "field": "0",
+                            "dataType": {
+                                "type": 46
+                            }
+                        },
+                        {
+                            "title": "total_films",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "avg_rental_rate",
+                            "field": "2",
+                            "dataType": {
+                                "type": 10
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 5 records retrieved in 3.996ms"
+                    },
+                    "totalRowCount": 5,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select \n    rating, count(*) as total_films, \n    avg(rental_rate) as avg_rental_rate\nfrom film \ngroup by rating\norder by avg_rental_rate"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 47,
+                "end": 47,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "c94a1562-ec1b-46ab-d46f-bc10498d9676",
+                            "content": "OK, 0 records retrieved in 1.001ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 11
+                        },
+                        "contentStart": 0,
+                        "state": 1
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 48,
+                "end": 52,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "e20ca54a-6017-45a2-940d-8cf36516f652"
+                    ]
+                },
+                "currentHeight": 181.09375,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 87
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "a4410002-8c3b-4d3a-920e-cf814d838231",
+                    "resultId": "e20ca54a-6017-45a2-940d-8cf36516f652",
+                    "rows": [
+                        {
+                            "0": "G",
+                            "1": 60
+                        },
+                        {
+                            "0": "PG",
+                            "1": 73
+                        },
+                        {
+                            "0": "NC-17",
+                            "1": 77
+                        },
+                        {
+                            "0": "R",
+                            "1": 78
+                        },
+                        {
+                            "0": "PG-13",
+                            "1": 104
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "rating",
+                            "field": "0",
+                            "dataType": {
+                                "type": 46
+                            }
+                        },
+                        {
+                            "title": "count(*)",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 5 records retrieved in 2.996ms"
+                    },
+                    "totalRowCount": 5,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select \n    rating, count(*)\n    from film\n    where length >= 130\n    group by rating"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 53,
+                "end": 53,
+                "language": "mysql",
+                "currentHeight": 180,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        }
+    ]
+}

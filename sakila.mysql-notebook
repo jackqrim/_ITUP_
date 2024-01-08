@@ -1,0 +1,329 @@
+{
+    "type": "MySQLNotebook",
+    "version": "1.0",
+    "caption": "DB Notebook",
+    "content": "\\about\nuse sakila;\nselect rating, count(*) as total_films,\navg(rental_rate) as avg_rental_rate\nfrom film\ngroup by rating\norder by avg_rental_rate;\n-- #85 EX\nselect rating, count(*) from film where length >= 130 group by rating;\n",
+    "options": {
+        "tabSize": 4,
+        "indentSize": 4,
+        "insertSpaces": true,
+        "defaultEOL": "LF",
+        "trimAutoWhitespace": true
+    },
+    "viewState": {
+        "cursorState": [
+            {
+                "inSelectionMode": false,
+                "selectionStart": {
+                    "lineNumber": 10,
+                    "column": 1
+                },
+                "position": {
+                    "lineNumber": 10,
+                    "column": 1
+                }
+            }
+        ],
+        "viewState": {
+            "scrollLeft": 0,
+            "firstPosition": {
+                "lineNumber": 1,
+                "column": 1
+            },
+            "firstPositionDeltaTop": 0
+        },
+        "contributionsState": {
+            "editor.contrib.folding": {},
+            "editor.contrib.wordHighlighter": false
+        }
+    },
+    "contexts": [
+        {
+            "state": {
+                "start": 1,
+                "end": 1,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "content": "Welcome to the MySQL Shell - DB Notebook.\n\nPress Ctrl+Enter to execute the code block.\n\nExecute \\sql to switch to SQL, \\js to JavaScript and \\ts to TypeScript mode.\nExecute \\help or \\? for help;",
+                            "language": "ansi"
+                        }
+                    ]
+                },
+                "currentHeight": 122,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 6
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 2,
+                "end": 2,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "3fad0a6b-452c-4403-e5d3-824f3a342a5f",
+                            "content": "OK, 0 records retrieved in 1.008ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 11
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 11,
+                            "length": 0
+                        },
+                        "contentStart": 10,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 3,
+                "end": 7,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "42d0f70b-871e-42dd-fe91-7ada2a2935bd"
+                    ]
+                },
+                "currentHeight": 187.46875,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 127
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "726708d2-c13d-4315-92ed-0ffd5004c6b8",
+                    "resultId": "42d0f70b-871e-42dd-fe91-7ada2a2935bd",
+                    "rows": [
+                        {
+                            "0": "G",
+                            "1": 178,
+                            "2": "2.888876"
+                        },
+                        {
+                            "0": "R",
+                            "1": 195,
+                            "2": "2.938718"
+                        },
+                        {
+                            "0": "NC-17",
+                            "1": 210,
+                            "2": "2.970952"
+                        },
+                        {
+                            "0": "PG-13",
+                            "1": 223,
+                            "2": "3.034843"
+                        },
+                        {
+                            "0": "PG",
+                            "1": 194,
+                            "2": "3.051856"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "rating",
+                            "field": "0",
+                            "dataType": {
+                                "type": 46
+                            }
+                        },
+                        {
+                            "title": "total_films",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "avg_rental_rate",
+                            "field": "2",
+                            "dataType": {
+                                "type": 10
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 5 records retrieved in 4.995ms"
+                    },
+                    "totalRowCount": 5,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select rating, count(*) as total_films,\navg(rental_rate) as avg_rental_rate\nfrom film\ngroup by rating\norder by avg_rental_rate"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 8,
+                "end": 8,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "347d9381-d26a-4f1b-dbf1-3b993e82b486",
+                            "content": "OK, 0 records retrieved in 0.979ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 9
+                        },
+                        "contentStart": 0,
+                        "state": 1
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 9,
+                "end": 9,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "602d153d-9088-4ca5-9292-320c13759ffb"
+                    ]
+                },
+                "currentHeight": 187.46875,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 70
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "726708d2-c13d-4315-92ed-0ffd5004c6b8",
+                    "resultId": "602d153d-9088-4ca5-9292-320c13759ffb",
+                    "rows": [
+                        {
+                            "0": "G",
+                            "1": 60
+                        },
+                        {
+                            "0": "PG",
+                            "1": 73
+                        },
+                        {
+                            "0": "NC-17",
+                            "1": 77
+                        },
+                        {
+                            "0": "R",
+                            "1": 78
+                        },
+                        {
+                            "0": "PG-13",
+                            "1": 104
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "rating",
+                            "field": "0",
+                            "dataType": {
+                                "type": 46
+                            }
+                        },
+                        {
+                            "title": "count(*)",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 5 records retrieved in 4.999ms"
+                    },
+                    "totalRowCount": 5,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select rating, count(*) from film where length >= 130 group by rating"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 10,
+                "end": 10,
+                "language": "mysql",
+                "currentHeight": 180,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        }
+    ]
+}

@@ -1,0 +1,2346 @@
+{
+    "type": "MySQLNotebook",
+    "version": "1.0",
+    "caption": "DB Notebook",
+    "content": "\\about\n/* ITUP_rv1_모듈9\n-- #74\n*/\nshow DATABASES;\nuse dave;\nshow tables;\nDESC dave_table;\ndrop database if exists dave;\ncreate database dave;\nuse dave;\n-- #75\ncreate table dave_table(\n    id int unsigned AUTO_INCREMENT,\n    primary key(id)\n);\nshow tables;\ndrop table dave_table;\nshow tables;\n-- #76\nuse customer_db;\nshow tables;\ncreate table mytable(\n    no integer not null AUTO_INCREMENT,\n    name char(20) not null,\n    age tinyint,\n    phone varchar(20),\n    email varchar(30) not null,\n    address varchar(50),\n    primary key(no)\n);\nshow tables;\ndesc mytable;\ndrop table if EXISTS mytable;\n-- #77 (ex)\nuse dave;\nshow tables;\ncreate table mytable(\n    id int unsigned not null auto_increment,\n    name varchar(50) not null,\n    modelnumber varchar(15) not null,\n    series varchar(30) not null,\n    primary key (id)\n);\ndesc mytable;\n-- #78\ninsert into mytable values(1, 'i7', '12700', 'Alder');\nselect * from mytable;\ninsert into mytable(name, modelnumber, series) \nvalues('i9', '12900', 'Alder');\nselect * from mytable;\ninsert into mytable(name, modelnumber, series)\nvalues('ryzen9', '5900', 'Vermeer');\ninsert into mytable(name, modelnumber, series)\nvalues('ryzen7', '5800', 'Vermeer');\nSELECT * from mytable;\n-- #79\nSELECT name as cpu_name, modelnumber as cpu_no from mytable;\nselect * from mytable where modelnumber = '12700';\nselect * from mytable where name = 'i7';\nselect * from mytable \nwhere series = \"Alder\" and modelnumber = '12700';\nselect * from mytable\nwhere series like \"%r\";\n-- #80\nupdate mytable\nset name='i5', modelnumber='12600'\nwhere id = 2;\nselect * from mytable;\ndelete from mytable where id=2;\nselect * from mytable;\ndelete from mytable;\nselect * from mytable;\ndrop table mytable;\nshow tables;\n",
+    "options": {
+        "tabSize": 4,
+        "indentSize": 4,
+        "insertSpaces": true,
+        "defaultEOL": "LF",
+        "trimAutoWhitespace": true
+    },
+    "viewState": {
+        "cursorState": [
+            {
+                "inSelectionMode": false,
+                "selectionStart": {
+                    "lineNumber": 76,
+                    "column": 1
+                },
+                "position": {
+                    "lineNumber": 76,
+                    "column": 1
+                }
+            }
+        ],
+        "viewState": {
+            "scrollLeft": 0,
+            "firstPosition": {
+                "lineNumber": 65,
+                "column": 1
+            },
+            "firstPositionDeltaTop": -13
+        },
+        "contributionsState": {
+            "editor.contrib.folding": {},
+            "editor.contrib.wordHighlighter": false
+        }
+    },
+    "contexts": [
+        {
+            "state": {
+                "start": 1,
+                "end": 1,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "content": "Welcome to the MySQL Shell - DB Notebook.\n\nPress Ctrl+Enter to execute the code block.\n\nExecute \\sql to switch to SQL, \\js to JavaScript and \\ts to TypeScript mode.\nExecute \\help or \\? for help;",
+                            "language": "ansi"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 6
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 2,
+                "end": 4,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "a3f03c28-7c07-44e7-b187-258a446a12bc",
+                            "content": "OK, 0 records retrieved in 0.995ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 25
+                        },
+                        "contentStart": -1,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 5,
+                "end": 5,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "0cae4b9d-de2d-4b0a-a63e-0e7b6f7338d6"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 15
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "0727b470-0b22-48de-8d88-254ad796e033",
+                    "resultId": "0cae4b9d-de2d-4b0a-a63e-0e7b6f7338d6",
+                    "rows": [
+                        {
+                            "0": "customer_db"
+                        },
+                        {
+                            "0": "dave"
+                        },
+                        {
+                            "0": "dbname"
+                        },
+                        {
+                            "0": "information_schema"
+                        },
+                        {
+                            "0": "mysql"
+                        },
+                        {
+                            "0": "performance_schema"
+                        },
+                        {
+                            "0": "sakila"
+                        },
+                        {
+                            "0": "sys"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Database",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 8 records retrieved in 10.988ms"
+                    },
+                    "totalRowCount": 8,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "show DATABASES"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 6,
+                "end": 7,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "71c97041-ca53-491b-91a2-786b02b57abf",
+                        "9314743f-806b-45b8-efe8-6388ea530f72"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 9
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 9,
+                            "length": 13
+                        },
+                        "contentStart": 10,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "0727b470-0b22-48de-8d88-254ad796e033",
+                    "resultId": "71c97041-ca53-491b-91a2-786b02b57abf",
+                    "rows": [
+                        {
+                            "0": "dave_table"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Tables_in_dave",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 10.001ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 1,
+                    "sql": "\nshow tables"
+                },
+                {
+                    "tabId": "0727b470-0b22-48de-8d88-254ad796e033",
+                    "resultId": "9314743f-806b-45b8-efe8-6388ea530f72",
+                    "rows": [],
+                    "executionInfo": {
+                        "text": "OK, 0 records retrieved in 2.997ms",
+                        "type": 4
+                    },
+                    "totalRowCount": 0,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "use dave"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 8,
+                "end": 8,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "190f34d8-9d4f-4a68-9099-4f2a11295093"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 16
+                        },
+                        "contentStart": 1,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 16,
+                            "length": 0
+                        },
+                        "contentStart": 15,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "0727b470-0b22-48de-8d88-254ad796e033",
+                    "resultId": "190f34d8-9d4f-4a68-9099-4f2a11295093",
+                    "rows": [
+                        {
+                            "0": "id",
+                            "1": "int unsigned",
+                            "2": "NO",
+                            "3": "PRI",
+                            "4": null,
+                            "5": "auto_increment"
+                        },
+                        {
+                            "0": "name",
+                            "1": "varchar(50)",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Field",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Type",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Null",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Key",
+                            "field": "3",
+                            "dataType": {
+                                "type": 46
+                            }
+                        },
+                        {
+                            "title": "Default",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Extra",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 2 records retrieved in 28ms"
+                    },
+                    "totalRowCount": 2,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "DESC dave_table"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 9,
+                "end": 11,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "fe7b79a8-a2af-4190-ff6a-fda082a4feb5",
+                            "content": "OK, 1 row affected in 178ms"
+                        },
+                        {
+                            "type": 4,
+                            "index": 1,
+                            "resultId": "07df344b-342c-4349-f115-6a9f9d668237",
+                            "content": "OK, 1 row affected in 4.962ms"
+                        },
+                        {
+                            "type": 4,
+                            "index": 2,
+                            "resultId": "a37c0074-1b66-4758-e958-1753dc49fb42",
+                            "content": "OK, 0 records retrieved in 1.007ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 29
+                        },
+                        "contentStart": 1,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 29,
+                            "length": 22
+                        },
+                        "contentStart": 30,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 51,
+                            "length": 10
+                        },
+                        "contentStart": 52,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 12,
+                "end": 12,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "48af4bc9-f93e-4380-8279-a28fa3cd3f35",
+                            "content": "OK, 0 records retrieved in 1ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 6
+                        },
+                        "contentStart": 0,
+                        "state": 1
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 13,
+                "end": 16,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "49441980-904a-431d-e776-a30d1086cbf2",
+                            "content": "OK, 0 records retrieved in 62.997ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 83
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 17,
+                "end": 17,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "2f95320b-2090-485c-c61c-61041791a3d1"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 12
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "0727b470-0b22-48de-8d88-254ad796e033",
+                    "resultId": "2f95320b-2090-485c-c61c-61041791a3d1",
+                    "rows": [
+                        {
+                            "0": "dave_table"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Tables_in_dave",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 6.994ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "show tables"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 18,
+                "end": 19,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "2cc365cf-f87a-4fab-f183-91c4254440fd",
+                            "content": "OK, 0 records retrieved in 46.997ms"
+                        },
+                        {
+                            "type": 4,
+                            "index": 1,
+                            "resultId": "126255a2-0e95-4517-e65d-e670d3ff988a",
+                            "content": "OK, 0 records retrieved in 4.001ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 22
+                        },
+                        "contentStart": 1,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 22,
+                            "length": 13
+                        },
+                        "contentStart": 23,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 20,
+                "end": 20,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "71662ea7-03a3-4acb-823b-c5e10512c7db",
+                            "content": "OK, 0 records retrieved in 0.997ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 6
+                        },
+                        "contentStart": 0,
+                        "state": 1
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 21,
+                "end": 21,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "bbb5d09b-6703-4492-dad9-a32d37298963",
+                            "content": "OK, 0 records retrieved in 0.998ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 16
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 22,
+                "end": 22,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "ee8566eb-569f-43c1-db4b-dea883a087bb",
+                            "content": "OK, 0 records retrieved in 4ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 12
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 23,
+                "end": 31,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "f75eb965-3557-4fc6-f631-880e75d328a8",
+                            "content": "OK, 0 records retrieved in 42.001ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 209
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 32,
+                "end": 32,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "e75dfcc9-b4fc-400c-a7fa-e78d924d8d5f"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 12
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "0727b470-0b22-48de-8d88-254ad796e033",
+                    "resultId": "e75dfcc9-b4fc-400c-a7fa-e78d924d8d5f",
+                    "rows": [
+                        {
+                            "0": "mytable"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Tables_in_customer_db",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 2.996ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "show tables"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 33,
+                "end": 33,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "fed2e8d7-02bc-4fdd-bdc9-636b67421b54"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 13
+                        },
+                        "contentStart": 1,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "0727b470-0b22-48de-8d88-254ad796e033",
+                    "resultId": "fed2e8d7-02bc-4fdd-bdc9-636b67421b54",
+                    "rows": [
+                        {
+                            "0": "no",
+                            "1": "int",
+                            "2": "NO",
+                            "3": "PRI",
+                            "4": null,
+                            "5": "auto_increment"
+                        },
+                        {
+                            "0": "name",
+                            "1": "char(20)",
+                            "2": "NO",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "age",
+                            "1": "tinyint",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "phone",
+                            "1": "varchar(20)",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "email",
+                            "1": "varchar(30)",
+                            "2": "NO",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "address",
+                            "1": "varchar(50)",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Field",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Type",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Null",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Key",
+                            "field": "3",
+                            "dataType": {
+                                "type": 46
+                            }
+                        },
+                        {
+                            "title": "Default",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Extra",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 6 records retrieved in 6.002ms"
+                    },
+                    "totalRowCount": 6,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "desc mytable"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 34,
+                "end": 34,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "5f2ea5a5-143c-4a0d-f7a9-b0404a24c7a1",
+                            "content": "OK, 0 records retrieved in 33.996ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 29
+                        },
+                        "contentStart": 1,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 35,
+                "end": 35,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "64044117-2474-49eb-a762-61de801bb72a",
+                            "content": "OK, 0 records retrieved in 1.005ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 11
+                        },
+                        "contentStart": 0,
+                        "state": 1
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 36,
+                "end": 37,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "b6f54e77-2e1a-4381-9d40-fc5c801f0de4",
+                            "content": "OK, 0 records retrieved in 1.002ms"
+                        },
+                        {
+                            "type": 4,
+                            "index": 1,
+                            "resultId": "90cd80b5-0526-4b4d-9f58-61fca097aa84",
+                            "content": "OK, 0 records retrieved in 3.001ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 9
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 9,
+                            "length": 13
+                        },
+                        "contentStart": 10,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 38,
+                "end": 44,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "67cfd15b-21ff-4539-acaa-98dc044f6a39",
+                            "content": "OK, 0 records retrieved in 30.034ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 192
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 45,
+                "end": 45,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "5fa3b7a7-fe18-467b-8c64-26a399261f9f"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 13
+                        },
+                        "contentStart": 1,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "0727b470-0b22-48de-8d88-254ad796e033",
+                    "resultId": "5fa3b7a7-fe18-467b-8c64-26a399261f9f",
+                    "rows": [
+                        {
+                            "0": "id",
+                            "1": "int unsigned",
+                            "2": "NO",
+                            "3": "PRI",
+                            "4": null,
+                            "5": "auto_increment"
+                        },
+                        {
+                            "0": "name",
+                            "1": "varchar(50)",
+                            "2": "NO",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "modelnumber",
+                            "1": "varchar(15)",
+                            "2": "NO",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "series",
+                            "1": "varchar(30)",
+                            "2": "NO",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Field",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Type",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Null",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Key",
+                            "field": "3",
+                            "dataType": {
+                                "type": 46
+                            }
+                        },
+                        {
+                            "title": "Default",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Extra",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 4 records retrieved in 2.995ms"
+                    },
+                    "totalRowCount": 4,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "desc mytable"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 46,
+                "end": 46,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "2a612082-bdb6-4129-9a4a-6225feee49c6",
+                            "content": "OK, 0 records retrieved in 0.999ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 6
+                        },
+                        "contentStart": 0,
+                        "state": 1
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 47,
+                "end": 48,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "f6881638-883d-4c15-8e38-5e9faff711c4",
+                        "26b6ece0-0a6f-4817-e0a4-616b7663cf00"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 54
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 54,
+                            "length": 23
+                        },
+                        "contentStart": 55,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "0727b470-0b22-48de-8d88-254ad796e033",
+                    "resultId": "f6881638-883d-4c15-8e38-5e9faff711c4",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "i7",
+                            "2": "12700",
+                            "3": "Alder"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "modelnumber",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "series",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 0.998ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 1,
+                    "sql": "\nselect * from mytable"
+                },
+                {
+                    "tabId": "0727b470-0b22-48de-8d88-254ad796e033",
+                    "resultId": "26b6ece0-0a6f-4817-e0a4-616b7663cf00",
+                    "rows": [],
+                    "executionInfo": {
+                        "text": "OK, 1 row affected in 12.996ms",
+                        "type": 4
+                    },
+                    "totalRowCount": 0,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "insert into mytable values(1, 'i7', '12700', 'Alder')"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 49,
+                "end": 51,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "8cafc9fd-0ee4-45f7-91e3-b036c163b543",
+                        "fe52dd43-719b-4af3-900a-fe41aad44061"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 79
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 79,
+                            "length": 23
+                        },
+                        "contentStart": 80,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "0727b470-0b22-48de-8d88-254ad796e033",
+                    "resultId": "8cafc9fd-0ee4-45f7-91e3-b036c163b543",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "i7",
+                            "2": "12700",
+                            "3": "Alder"
+                        },
+                        {
+                            "0": 2,
+                            "1": "i9",
+                            "2": "12900",
+                            "3": "Alder"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "modelnumber",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "series",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 2 records retrieved in 0.967ms"
+                    },
+                    "totalRowCount": 2,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 1,
+                    "sql": "\nselect * from mytable"
+                },
+                {
+                    "tabId": "0727b470-0b22-48de-8d88-254ad796e033",
+                    "resultId": "fe52dd43-719b-4af3-900a-fe41aad44061",
+                    "rows": [],
+                    "executionInfo": {
+                        "text": "OK, 1 row affected in 1.998ms",
+                        "type": 4
+                    },
+                    "totalRowCount": 0,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "insert into mytable(name, modelnumber, series) \nvalues('i9', '12900', 'Alder')"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 52,
+                "end": 56,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "d04ae5c8-2376-41e6-b3bd-053a72ab8d7e",
+                        "f469041a-a040-4ace-fdb4-143ce58c1188",
+                        "280eff58-6ecd-4081-ddb4-e17441b84dec"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 83
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 83,
+                            "length": 84
+                        },
+                        "contentStart": 84,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 167,
+                            "length": 23
+                        },
+                        "contentStart": 168,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "0727b470-0b22-48de-8d88-254ad796e033",
+                    "resultId": "d04ae5c8-2376-41e6-b3bd-053a72ab8d7e",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "i7",
+                            "2": "12700",
+                            "3": "Alder"
+                        },
+                        {
+                            "0": 2,
+                            "1": "i9",
+                            "2": "12900",
+                            "3": "Alder"
+                        },
+                        {
+                            "0": 3,
+                            "1": "ryzen9",
+                            "2": "5900",
+                            "3": "Vermeer"
+                        },
+                        {
+                            "0": 4,
+                            "1": "ryzen7",
+                            "2": "5800",
+                            "3": "Vermeer"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "modelnumber",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "series",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 4 records retrieved in 1.001ms"
+                    },
+                    "totalRowCount": 4,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 2,
+                    "sql": "\nSELECT * from mytable"
+                },
+                {
+                    "tabId": "0727b470-0b22-48de-8d88-254ad796e033",
+                    "resultId": "f469041a-a040-4ace-fdb4-143ce58c1188",
+                    "rows": [],
+                    "executionInfo": {
+                        "text": "OK, 1 row affected in 3ms",
+                        "type": 4
+                    },
+                    "totalRowCount": 0,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "insert into mytable(name, modelnumber, series)\nvalues('ryzen9', '5900', 'Vermeer')"
+                },
+                {
+                    "tabId": "0727b470-0b22-48de-8d88-254ad796e033",
+                    "resultId": "280eff58-6ecd-4081-ddb4-e17441b84dec",
+                    "rows": [],
+                    "executionInfo": {
+                        "text": "OK, 1 row affected in 3.997ms",
+                        "type": 4
+                    },
+                    "totalRowCount": 0,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 1,
+                    "sql": "\ninsert into mytable(name, modelnumber, series)\nvalues('ryzen7', '5800', 'Vermeer')"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 57,
+                "end": 57,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "1102f0b9-d1d7-431a-d637-dd44b9509e88",
+                            "content": "OK, 0 records retrieved in 1.007ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 6
+                        },
+                        "contentStart": 0,
+                        "state": 1
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 58,
+                "end": 58,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "c3033a2d-8149-4110-de8a-cd28405486bb"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 60
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "0727b470-0b22-48de-8d88-254ad796e033",
+                    "resultId": "c3033a2d-8149-4110-de8a-cd28405486bb",
+                    "rows": [
+                        {
+                            "0": "i7",
+                            "1": "12700"
+                        },
+                        {
+                            "0": "i9",
+                            "1": "12900"
+                        },
+                        {
+                            "0": "ryzen9",
+                            "1": "5900"
+                        },
+                        {
+                            "0": "ryzen7",
+                            "1": "5800"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "cpu_name",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "cpu_no",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 4 records retrieved in 1ms"
+                    },
+                    "totalRowCount": 4,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT name as cpu_name, modelnumber as cpu_no from mytable"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 59,
+                "end": 59,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "38878234-662c-44c9-a454-89e960f22ecc"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 50
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "0727b470-0b22-48de-8d88-254ad796e033",
+                    "resultId": "38878234-662c-44c9-a454-89e960f22ecc",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "i7",
+                            "2": "12700",
+                            "3": "Alder"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "modelnumber",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "series",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 0.998ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from mytable where modelnumber = '12700'"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 60,
+                "end": 60,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "ef77a3eb-fe6e-4b9f-cf87-f3825d9f1d1e"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 40
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "0727b470-0b22-48de-8d88-254ad796e033",
+                    "resultId": "ef77a3eb-fe6e-4b9f-cf87-f3825d9f1d1e",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "i7",
+                            "2": "12700",
+                            "3": "Alder"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "modelnumber",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "series",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 1ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from mytable where name = 'i7'"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 61,
+                "end": 62,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "010e194d-905a-4085-85bf-741eec09ae03"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 72
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "0727b470-0b22-48de-8d88-254ad796e033",
+                    "resultId": "010e194d-905a-4085-85bf-741eec09ae03",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "i7",
+                            "2": "12700",
+                            "3": "Alder"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "modelnumber",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "series",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 0.998ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from mytable \nwhere series = \"Alder\" and modelnumber = '12700'"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 63,
+                "end": 64,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "20c0758f-f587-40e7-86c7-1f55e5d1de06"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 45
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "0727b470-0b22-48de-8d88-254ad796e033",
+                    "resultId": "20c0758f-f587-40e7-86c7-1f55e5d1de06",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "i7",
+                            "2": "12700",
+                            "3": "Alder"
+                        },
+                        {
+                            "0": 2,
+                            "1": "i9",
+                            "2": "12900",
+                            "3": "Alder"
+                        },
+                        {
+                            "0": 3,
+                            "1": "ryzen9",
+                            "2": "5900",
+                            "3": "Vermeer"
+                        },
+                        {
+                            "0": 4,
+                            "1": "ryzen7",
+                            "2": "5800",
+                            "3": "Vermeer"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "modelnumber",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "series",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 4 records retrieved in 1.964ms"
+                    },
+                    "totalRowCount": 4,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from mytable\nwhere series like \"%r\""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 65,
+                "end": 65,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "ed72e6ea-ffb2-475a-b245-b12084cf5622",
+                            "content": "OK, 0 records retrieved in 1.022ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 6
+                        },
+                        "contentStart": 0,
+                        "state": 1
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 66,
+                "end": 68,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "41195a9e-8253-4026-a777-74e1ab7173e1",
+                            "content": "OK, 1 row affected in 7.005ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 63
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 69,
+                "end": 69,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "03c8e6f4-9bb9-4e43-eb87-ddff7519cea3"
+                    ]
+                },
+                "currentHeight": 158.265625,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 22
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "0727b470-0b22-48de-8d88-254ad796e033",
+                    "resultId": "03c8e6f4-9bb9-4e43-eb87-ddff7519cea3",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "i7",
+                            "2": "12700",
+                            "3": "Alder"
+                        },
+                        {
+                            "0": 2,
+                            "1": "i5",
+                            "2": "12600",
+                            "3": "Alder"
+                        },
+                        {
+                            "0": 3,
+                            "1": "ryzen9",
+                            "2": "5900",
+                            "3": "Vermeer"
+                        },
+                        {
+                            "0": 4,
+                            "1": "ryzen7",
+                            "2": "5800",
+                            "3": "Vermeer"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "modelnumber",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "series",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 4 records retrieved in 3.009ms"
+                    },
+                    "totalRowCount": 4,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from mytable"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 70,
+                "end": 71,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "ab72c35b-3c14-46af-be05-5915105ba896",
+                        "092f857c-d478-4119-e032-26e69f9ff894"
+                    ]
+                },
+                "currentHeight": 162.421875,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 31
+                        },
+                        "contentStart": 1,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 31,
+                            "length": 23
+                        },
+                        "contentStart": 32,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "0727b470-0b22-48de-8d88-254ad796e033",
+                    "resultId": "ab72c35b-3c14-46af-be05-5915105ba896",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "i7",
+                            "2": "12700",
+                            "3": "Alder"
+                        },
+                        {
+                            "0": 3,
+                            "1": "ryzen9",
+                            "2": "5900",
+                            "3": "Vermeer"
+                        },
+                        {
+                            "0": 4,
+                            "1": "ryzen7",
+                            "2": "5800",
+                            "3": "Vermeer"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "modelnumber",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "series",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 3 records retrieved in 0.993ms"
+                    },
+                    "totalRowCount": 3,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 1,
+                    "sql": "\nselect * from mytable"
+                },
+                {
+                    "tabId": "0727b470-0b22-48de-8d88-254ad796e033",
+                    "resultId": "092f857c-d478-4119-e032-26e69f9ff894",
+                    "rows": [],
+                    "executionInfo": {
+                        "text": "OK, 1 row affected in 3.994ms",
+                        "type": 4
+                    },
+                    "totalRowCount": 0,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "delete from mytable where id=2"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 72,
+                "end": 73,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "ddad18d7-ea50-46b4-a35d-0721d61d566d",
+                            "content": "OK, 3 rows affected in 9.012ms"
+                        },
+                        {
+                            "type": 4,
+                            "index": 1,
+                            "resultId": "7be62278-d602-4e5a-8377-fee909254ff5",
+                            "content": "OK, 0 records retrieved in 0s"
+                        }
+                    ]
+                },
+                "currentHeight": 44.65625,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 20
+                        },
+                        "contentStart": 1,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 20,
+                            "length": 23
+                        },
+                        "contentStart": 21,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 74,
+                "end": 75,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "cf6544fa-96ba-45e6-e2bd-bd7cdfe87467",
+                            "content": "OK, 0 records retrieved in 29.001ms"
+                        },
+                        {
+                            "type": 4,
+                            "index": 1,
+                            "resultId": "3d7bb050-39dc-4805-f7ba-48f5a73a7cc3",
+                            "content": "OK, 0 records retrieved in 2.967ms"
+                        }
+                    ]
+                },
+                "currentHeight": 44.65625,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 19
+                        },
+                        "contentStart": 1,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 19,
+                            "length": 13
+                        },
+                        "contentStart": 20,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 76,
+                "end": 76,
+                "language": "mysql",
+                "currentHeight": 180,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        }
+    ]
+}
